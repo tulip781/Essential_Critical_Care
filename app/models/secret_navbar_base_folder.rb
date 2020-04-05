@@ -1,0 +1,2 @@
+class SecretNavbarBaseFolder < ApplicationRecord
+end
