@@ -3,6 +3,8 @@ class Pdf < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :secret_category, optional: true
   belongs_to :secret_sub_category, optional: true
+  translates :title
+  globalize_accessors :locales => [:en, :lo], :attributes => [:title]
   has_one_attached :file
 
   validate :there_can_be_only_one

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_174931) do
+ActiveRecord::Schema.define(version: 2020_04_05_180628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,8 +101,17 @@ ActiveRecord::Schema.define(version: 2020_04_05_174931) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pdfs", force: :cascade do |t|
+  create_table "pdf_translations", force: :cascade do |t|
+    t.bigint "pdf_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
+    t.index ["locale"], name: "index_pdf_translations_on_locale"
+    t.index ["pdf_id"], name: "index_pdf_translations_on_pdf_id"
+  end
+
+  create_table "pdfs", force: :cascade do |t|
     t.bigint "sub_category_id"
     t.bigint "category_id"
     t.bigint "secret_category_id"

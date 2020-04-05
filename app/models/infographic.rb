@@ -3,7 +3,7 @@ class Infographic < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :secret_category, optional: true
   belongs_to :secret_sub_category, optional: true
-  has_one_attached :image
+  has_one_attached :photo
 
   private
 
