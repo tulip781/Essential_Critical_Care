@@ -1,0 +1,7 @@
+<h1>This is the Main Category show page</h1>
+<h1><%= @navbar_base_folder.title %></h1>
+<p><%= @navbar_base_folder.updated_at %></p>
+<% @navbar_base_folder.categories.each do |b| %>
+  <p><%= link_to b.title, category_path(b) %></p>
+  <p><%= b.description %></p>
+<% end %>
