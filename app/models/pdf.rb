@@ -3,4 +3,5 @@ class Pdf < ApplicationRecord
   belongs_to :category
   belongs_to :secret_category
   belongs_to :secret_sub_category
+  has_one_attached :file
 end
