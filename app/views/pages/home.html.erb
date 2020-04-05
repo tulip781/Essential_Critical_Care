@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1><%= t('home.title') %></h1>
+<h4><%= t('home.welcome') %></h4>
+
+<ul>
+  <li><%= link_to t('home.about_link'), about_path %></li>
+  <li><%= link_to t('home.contact_link'), contact_path %></li>
+</ul>
+
+<h5><%= t('home.login_hint') %></h5>
+<h6><%= link_to t('home.login_title'), new_user_session_path %></h6>
