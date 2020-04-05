@@ -11,6 +11,11 @@ ActiveAdmin.register Infographic do
     f.inputs "Upload the Infographic or Poster you want. It has to be PNG or JPEG" do
       f.input :photo, label: "Infographic upload", as: :file, input_html: { direct_upload: true }
     end
+    I18n.available_locales.each do |locale|
+      f.inputs " #{locale == :en ? 'English Translation ' : 'Laos Translation'}" do
+        f.input "title_#{locale}", label: "#{locale == :en ? 'English Infographic Title ' : 'Laos Infographic Title'}"
+      end
+    end
     f.inputs "Select one Category to attach Infographic or Poster to" do
       f.input :category, label: "Category"
       f.input :sub_category, label: "Sub Category"
