@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_164605) do
+ActiveRecord::Schema.define(version: 2020_04_05_165055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,13 +118,22 @@ ActiveRecord::Schema.define(version: 2020_04_05_164605) do
   end
 
   create_table "secret_categories", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
     t.bigint "secret_navbar_base_folder_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "has_secret_subcategory", default: true
     t.index ["secret_navbar_base_folder_id"], name: "index_secret_categories_on_secret_navbar_base_folder_id"
+  end
+
+  create_table "secret_category_translations", force: :cascade do |t|
+    t.bigint "secret_category_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "description"
+    t.index ["locale"], name: "index_secret_category_translations_on_locale"
+    t.index ["secret_category_id"], name: "index_secret_category_translations_on_secret_category_id"
   end
 
   create_table "secret_navbar_base_folders", force: :cascade do |t|
