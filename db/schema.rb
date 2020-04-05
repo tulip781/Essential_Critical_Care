@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_180628) do
+ActiveRecord::Schema.define(version: 2020_04_05_181312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,8 +69,17 @@ ActiveRecord::Schema.define(version: 2020_04_05_180628) do
     t.index ["locale"], name: "index_category_translations_on_locale"
   end
 
-  create_table "infographics", force: :cascade do |t|
+  create_table "infographic_translations", force: :cascade do |t|
+    t.bigint "infographic_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
+    t.index ["infographic_id"], name: "index_infographic_translations_on_infographic_id"
+    t.index ["locale"], name: "index_infographic_translations_on_locale"
+  end
+
+  create_table "infographics", force: :cascade do |t|
     t.bigint "sub_category_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
