@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_132619) do
+ActiveRecord::Schema.define(version: 2020_04_05_155448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,9 +74,18 @@ ActiveRecord::Schema.define(version: 2020_04_05_132619) do
     t.index ["sub_category_id"], name: "index_infographics_on_sub_category_id"
   end
 
-  create_table "navbar_base_folders", force: :cascade do |t|
+  create_table "navbar_base_folder_translations", force: :cascade do |t|
+    t.bigint "navbar_base_folder_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
     t.text "description"
+    t.index ["locale"], name: "index_navbar_base_folder_translations_on_locale"
+    t.index ["navbar_base_folder_id"], name: "index_navbar_base_folder_translations_on_navbar_base_folder_id"
+  end
+
+  create_table "navbar_base_folders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
