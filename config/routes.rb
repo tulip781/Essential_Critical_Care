@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'contact', to: "pages#about"
 
   resources :navbar_base_folder, only: [ :show ]
-
+  resources :navbar_base_folder, only: [ :show ]
 end

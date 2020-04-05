@@ -1,6 +1,6 @@
-class NavbarBaseFolders < ApplicationController
+class NavbarBaseFoldersController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_navbar_base_folder, only: [:show, :edit, :update, :destroy]
 
   def index
   end
