@@ -23,6 +23,7 @@ ActiveAdmin.register Pdf do
     f.inputs "Would you like to pin PDF as important in the attatched Category. This will make it appear near the top of the list." do
       f.input :pinned?, label: "Check this box if you want to pin this PDF"
     end
+    f.actions
   end
   #
   # permit_params do
