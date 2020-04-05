@@ -1,12 +1,13 @@
-ActiveAdmin.register NavbarBaseFolder do
+ActiveAdmin.register SecretNavbarBaseFolder do
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params *NavbarBaseFolder.globalize_attribute_names, :banner
+  # permit_params :title, :description
   #
-  # or
+  permit_params *SecretNavbarBaseFolder.globalize_attribute_names, :banner
 
   form do |f|
   f.semantic_errors # shows errors on :base
@@ -15,17 +16,17 @@ ActiveAdmin.register NavbarBaseFolder do
     f.input "banner", label: "Banner", as: :file, input_html: { direct_upload: true }
   end
   I18n.available_locales.each do |locale|
-    f.inputs " #{locale == :en ? 'Navbar - English Translation ' : 'Navbar - Laos Translation'}" do
-      f.input "title_#{locale}", label: "Navbar Title - #{locale}"
-      f.input "description_#{locale}", as: :text, label: "Navbar Description - #{locale}"
+    f.inputs " #{locale == :en ? 'Secret Navbar - English Translation ' : 'Secret Navbar - Laos Translation'}" do
+      f.input "title_#{locale}", label: "Secret Navbar Title - #{locale}"
+      f.input "description_#{locale}", as: :text, label: "Secret Navbar Description - #{locale}"
     end
   end
   f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
+  #
   # permit_params do
   #   permitted = [:title, :description]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
 end
-

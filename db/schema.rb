@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_132619) do
+ActiveRecord::Schema.define(version: 2020_04_05_181312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,8 +51,6 @@ ActiveRecord::Schema.define(version: 2020_04_05_132619) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
     t.boolean "has_subcategory", default: true
     t.bigint "navbar_base_folder_id"
     t.datetime "created_at", null: false
@@ -60,35 +58,77 @@ ActiveRecord::Schema.define(version: 2020_04_05_132619) do
     t.index ["navbar_base_folder_id"], name: "index_categories_on_navbar_base_folder_id"
   end
 
-  create_table "infographics", force: :cascade do |t|
+  create_table "category_translations", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
+    t.text "description"
+    t.index ["category_id"], name: "index_category_translations_on_category_id"
+    t.index ["locale"], name: "index_category_translations_on_locale"
+  end
+
+  create_table "infographic_translations", force: :cascade do |t|
+    t.bigint "infographic_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["infographic_id"], name: "index_infographic_translations_on_infographic_id"
+    t.index ["locale"], name: "index_infographic_translations_on_locale"
+  end
+
+  create_table "infographics", force: :cascade do |t|
     t.bigint "sub_category_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "secret_category_id"
     t.bigint "secret_sub_category_id"
+    t.boolean "english?", default: true
+    t.boolean "pinned?", default: false
     t.index ["category_id"], name: "index_infographics_on_category_id"
     t.index ["secret_category_id"], name: "index_infographics_on_secret_category_id"
     t.index ["secret_sub_category_id"], name: "index_infographics_on_secret_sub_category_id"
     t.index ["sub_category_id"], name: "index_infographics_on_sub_category_id"
   end
 
-  create_table "navbar_base_folders", force: :cascade do |t|
+  create_table "navbar_base_folder_translations", force: :cascade do |t|
+    t.bigint "navbar_base_folder_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
     t.text "description"
+    t.index ["locale"], name: "index_navbar_base_folder_translations_on_locale"
+    t.index ["navbar_base_folder_id"], name: "index_navbar_base_folder_translations_on_navbar_base_folder_id"
+  end
+
+  create_table "navbar_base_folders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "pdfs", force: :cascade do |t|
+  create_table "pdf_translations", force: :cascade do |t|
+    t.bigint "pdf_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
+    t.index ["locale"], name: "index_pdf_translations_on_locale"
+    t.index ["pdf_id"], name: "index_pdf_translations_on_pdf_id"
+  end
+
+  create_table "pdfs", force: :cascade do |t|
     t.bigint "sub_category_id"
     t.bigint "category_id"
     t.bigint "secret_category_id"
     t.bigint "secret_sub_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "english?", default: true
+    t.boolean "pinned?", default: false
     t.index ["category_id"], name: "index_pdfs_on_category_id"
     t.index ["secret_category_id"], name: "index_pdfs_on_secret_category_id"
     t.index ["secret_sub_category_id"], name: "index_pdfs_on_secret_sub_category_id"
@@ -96,8 +136,6 @@ ActiveRecord::Schema.define(version: 2020_04_05_132619) do
   end
 
   create_table "secret_categories", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
     t.bigint "secret_navbar_base_folder_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -105,29 +143,67 @@ ActiveRecord::Schema.define(version: 2020_04_05_132619) do
     t.index ["secret_navbar_base_folder_id"], name: "index_secret_categories_on_secret_navbar_base_folder_id"
   end
 
-  create_table "secret_navbar_base_folders", force: :cascade do |t|
+  create_table "secret_category_translations", force: :cascade do |t|
+    t.bigint "secret_category_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
     t.text "description"
+    t.index ["locale"], name: "index_secret_category_translations_on_locale"
+    t.index ["secret_category_id"], name: "index_secret_category_translations_on_secret_category_id"
+  end
+
+  create_table "secret_navbar_base_folder_translations", force: :cascade do |t|
+    t.bigint "secret_navbar_base_folder_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "description"
+    t.index ["locale"], name: "index_secret_navbar_base_folder_translations_on_locale"
+    t.index ["secret_navbar_base_folder_id"], name: "index_03e5858886da6c5509c85b7814b1cb9b0f1046d5"
+  end
+
+  create_table "secret_navbar_base_folders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "secret_sub_categories", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
     t.bigint "secret_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["secret_category_id"], name: "index_secret_sub_categories_on_secret_category_id"
   end
 
-  create_table "sub_categories", force: :cascade do |t|
+  create_table "secret_sub_category_translations", force: :cascade do |t|
+    t.bigint "secret_sub_category_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
     t.text "description"
+    t.index ["locale"], name: "index_secret_sub_category_translations_on_locale"
+    t.index ["secret_sub_category_id"], name: "index_49f4f00142275957c56166733906e86deeb7d228"
+  end
+
+  create_table "sub_categories", force: :cascade do |t|
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_sub_categories_on_category_id"
+  end
+
+  create_table "sub_category_translations", force: :cascade do |t|
+    t.bigint "sub_category_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "description"
+    t.index ["locale"], name: "index_sub_category_translations_on_locale"
+    t.index ["sub_category_id"], name: "index_sub_category_translations_on_sub_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -144,8 +220,17 @@ ActiveRecord::Schema.define(version: 2020_04_05_132619) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "videos", force: :cascade do |t|
+  create_table "video_translations", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "title"
+    t.index ["locale"], name: "index_video_translations_on_locale"
+    t.index ["video_id"], name: "index_video_translations_on_video_id"
+  end
+
+  create_table "videos", force: :cascade do |t|
     t.string "url"
     t.bigint "sub_category_id"
     t.bigint "category_id"
@@ -153,6 +238,8 @@ ActiveRecord::Schema.define(version: 2020_04_05_132619) do
     t.bigint "secret_sub_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "english?", default: true
+    t.boolean "pinned?", default: false
     t.index ["category_id"], name: "index_videos_on_category_id"
     t.index ["secret_category_id"], name: "index_videos_on_secret_category_id"
     t.index ["secret_sub_category_id"], name: "index_videos_on_secret_sub_category_id"

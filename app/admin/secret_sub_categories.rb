@@ -1,31 +1,28 @@
-ActiveAdmin.register NavbarBaseFolder do
+ActiveAdmin.register SecretSubCategory do
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params *NavbarBaseFolder.globalize_attribute_names, :banner
-  #
-  # or
+  # permit_params :secret_category_id, :title, :description
+  permit_params *SecretSubCategory.globalize_attribute_names
 
   form do |f|
   f.semantic_errors # shows errors on :base
   f.inputs          # builds an input field for every attribute
-  f.inputs "Upload the photo you want as the section banner" do
-    f.input "banner", label: "Banner", as: :file, input_html: { direct_upload: true }
-  end
   I18n.available_locales.each do |locale|
-    f.inputs " #{locale == :en ? 'Navbar - English Translation ' : 'Navbar - Laos Translation'}" do
-      f.input "title_#{locale}", label: "Navbar Title - #{locale}"
-      f.input "description_#{locale}", as: :text, label: "Navbar Description - #{locale}"
+    f.inputs " #{locale == :en ? 'Secret Sub Category - English Translation ' : 'Secret Sub Category - Laos Translation'}" do
+      f.input "title_#{locale}", label: "Secret Sub Category Title - #{locale}"
+      f.input "description_#{locale}", as: :text, label: "Secret Sub Category Description - #{locale}"
     end
   end
   f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
   # permit_params do
-  #   permitted = [:title, :description]
+  #   permitted = [:secret_category_id, :title, :description]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-end
 
+end
