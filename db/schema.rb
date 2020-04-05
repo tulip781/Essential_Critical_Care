@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_162655) do
+ActiveRecord::Schema.define(version: 2020_04_05_164605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_162655) do
     t.bigint "secret_category_id"
     t.bigint "secret_sub_category_id"
     t.boolean "english?", default: true
+    t.boolean "pinned?", default: false
     t.index ["category_id"], name: "index_infographics_on_category_id"
     t.index ["secret_category_id"], name: "index_infographics_on_secret_category_id"
     t.index ["secret_sub_category_id"], name: "index_infographics_on_secret_sub_category_id"
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_162655) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "english?", default: true
+    t.boolean "pinned?", default: false
     t.index ["category_id"], name: "index_pdfs_on_category_id"
     t.index ["secret_category_id"], name: "index_pdfs_on_secret_category_id"
     t.index ["secret_sub_category_id"], name: "index_pdfs_on_secret_sub_category_id"
@@ -174,6 +176,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_162655) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "english?", default: true
+    t.boolean "pinned?", default: false
     t.index ["category_id"], name: "index_videos_on_category_id"
     t.index ["secret_category_id"], name: "index_videos_on_secret_category_id"
     t.index ["secret_sub_category_id"], name: "index_videos_on_secret_sub_category_id"
