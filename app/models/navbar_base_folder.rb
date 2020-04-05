@@ -1,0 +1,2 @@
+class NavbarBaseFolder < ApplicationRecord
+end
