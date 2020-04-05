@@ -22,10 +22,14 @@ ActiveAdmin.register NavbarBaseFolder do
   end
   f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
-  # permit_params do
-  #   permitted = [:title, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  index do
+    selectable_column
+    column :title
+    column :description
+    column :created_at
+    column "Number of attached categories" do |folder|
+      folder.categories.count
+    end
+    actions
+  end
 end
-
