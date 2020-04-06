@@ -5,10 +5,10 @@ ActiveAdmin.register Pdf do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params *Pdf.globalize_attribute_names, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?, :file
+  permit_params *Pdf.globalize_attribute_names, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?, :document
   form do |f|
     f.inputs "Upload the PDF you want" do
-      f.input "file", label: "PDF upload", as: :file, input_html: { direct_upload: true }
+      f.input :document, label: "PDF upload", as: :file, input_html: { direct_upload: true }
     end
     f.semantic_errors # shows errors on :base
     I18n.available_locales.each do |locale|

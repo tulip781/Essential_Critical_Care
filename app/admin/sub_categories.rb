@@ -7,7 +7,7 @@ ActiveAdmin.register SubCategory do
   #
   # permit_params :category_id, :title, :description
   #
-  permit_params *SubCategory.globalize_attribute_names
+  permit_params *SubCategory.globalize_attribute_names, :category_id
 
   form do |f|
   f.semantic_errors # shows errors on :base

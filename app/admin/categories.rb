@@ -6,7 +6,7 @@ ActiveAdmin.register Category do
   # Uncomment all parameters which should be permitted for assignment
   #
   # permit_params :has_subcategory, :navbar_base_folder_id, :title, :description
-  permit_params *Category.globalize_attribute_names
+  permit_params *Category.globalize_attribute_names, :has_subcategory, :navbar_base_folder_id
 
   form do |f|
   f.semantic_errors # shows errors on :base

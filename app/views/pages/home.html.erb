@@ -3,6 +3,9 @@
 
 <ul>
   <li><%= link_to t('home.about_link'), about_path %></li>
+  <% @navlinks.each do |f|  %>
+    <li><%= link_to f.title,  navbar_base_folder_path(f) %></li>
+  <% end %>
   <li><%= link_to t('home.contact_link'), contact_path %></li>
 </ul>
 

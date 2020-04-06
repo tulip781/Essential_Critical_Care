@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
+  before_action :get_nav_categories
 
   def configure_permitted_parameters
     added_attrs = [:username, :password]
@@ -15,5 +16,11 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+  end
+
+  private
+
+  def get_nav_categories
+    @navlinks = NavbarBaseFolder.all
   end
 end
