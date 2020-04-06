@@ -6,8 +6,6 @@ class SubCategoriesController < ApplicationController
   end
 
   def show
-
-
   end
 
   def new
@@ -27,7 +25,7 @@ class SubCategoriesController < ApplicationController
 
   private
 
-  def set_secret_sub_category
+  def set_sub_category
     @sub_category = SubCategory.find(params[:id])
   end
 end

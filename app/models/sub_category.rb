@@ -4,5 +4,6 @@ class SubCategory < ApplicationRecord
   has_many :videos, dependent: :destroy
   has_many :pdfs, dependent: :destroy
   translates :title, :description
+  accepts_nested_attributes_for :category
   globalize_accessors :locales => [:en, :lo], :attributes => [:title, :description]
 end

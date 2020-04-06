@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
   private
 
   def get_nav_categories
-    @navbar_base_folders = NavbarBaseFolder.all
+    @navlinks = NavbarBaseFolder.all
   end
 end

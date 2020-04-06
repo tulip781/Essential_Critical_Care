@@ -1,4 +1,5 @@
 <h1>This is the Main Category show page</h1>
+<%= cl_image_tag(@navbar_base_folder.banner.key, width: 200) %>
 <h1><%= @navbar_base_folder.title %></h1>
 <p><%= @navbar_base_folder.updated_at %></p>
 <% @navbar_base_folder.categories.each do |b| %>

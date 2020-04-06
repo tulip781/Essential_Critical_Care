@@ -1,3 +1,9 @@
-<h1>Category Show</h1>
 
+<h1>Category Show</h1>
+<%= cl_image_tag(@category.navbar_base_folder.banner.key, width: 200) %>
+<h5><%= @category.navbar_base_folder.title %></h5>
 <h1><%= @category.title %></h1>
+<p><%= @category.description %></p>
+<% @category.sub_categories.each do |c| %>
+  <p><%= link_to c.title, sub_category_path(c) %></p>
+<% end %>
