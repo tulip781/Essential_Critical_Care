@@ -4,19 +4,21 @@
 <h5><%= link_to @sub_category.category.title, category_path(@sub_category.category) %></h1>
 <h1><%= @sub_category.title %></h1>
 <p><%= @sub_category.description %></p>
+
 <h1>PDFS</h1>
 <% @sub_category.pdfs.each do |p| %>
-  <p>PDF:  <%= link_to p.title, p.document.service_url %></p>
+<h5><%= p.title %></h5>
+  <p><%= link_to 'View', p.document.service_url, target: :_blank %> <%= link_to 'Download', cl_image_path(p.document.key, :flags => :attachment, fl_attachment: "This is what is should be called") %>  </p>
 <% end %>
+
 <h1>Infographics</h1>
 <% @sub_category.infographics.each do |i| %>
   <p><%= i.title %></p>
   <p><%= cl_image_tag(i.photo.key, :width=>100, :crop=>"scale") %></p>
 <% end %>
+
 <h1>Videos</h1>
 <% @sub_category.videos.each do |i| %>
   <p><%= i.title %></p>
-  <p><%= i.url %></p>
-  <p class='js-modal-btn' data-video-id=''>Stream Video</p>
-
+  <p class='js-modal-btn' data-video-id= "<%= i.url_code  %>" >Stream Video</p>
 <% end %>
