@@ -8,9 +8,5 @@
     <p><%= link_to c.title, sub_category_path(c) %></p>
   <% end %>
 <% else %>
-  <h1>Infographics</h1>
-  <% @category.infographics.each do |i| %>
-    <p><%= i.title %></p>
-    <p><%= cl_image_tag(i.photo.key, :width=>100, :crop=>"scale") %></p>
-  <% end %>
+<%= render partial: "render_selected_resources", locals: { resources: @all_resources } %>
 <% end %>

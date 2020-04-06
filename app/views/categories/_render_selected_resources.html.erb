@@ -1,0 +1,9 @@
+<h1>Selective Resources</h1>
+<% resources.each do |r| %>
+  <% if r.class.name == "Infographic" %>
+    <p><%= r.title %></p>
+    <p><%= r.photo.content_type.split('/').last %></p>
+    <p><%= (r.photo.byte_size*0.000001).round(2) %> MB </p>
+    <p><%= cl_image_tag(r.photo.key, :width=>100, :crop=>"scale") %></p>
+  <% end %>
+<% end %>
