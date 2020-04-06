@@ -18,6 +18,17 @@ class SubCategory < ApplicationRecord
     self.infographics.each do |i|
       resources << i
     end
-    resources.sort_by(&:created_at).reverse
+    sorted = resources.sort_by(&:created_at).reverse
+    sorted.sort do |a, b|
+      if b.pinned? && a.pinned?
+        0
+      elsif b.pinned? == false && a.pinned?
+        -1
+      elsif b.pinned? && a.pinned? == false
+        1
+      elsif b.pinned? == false && a.pinned? == false
+        0
+      end
+    end
   end
 end
