@@ -6,6 +6,7 @@ class SecretSubCategoriesController < ApplicationController
   end
 
   def show
+    @all_resources = @secret_sub_category.create_resources
   end
 
   def new
