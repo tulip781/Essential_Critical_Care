@@ -1,0 +1,18 @@
+<h1>Resources</h1>
+<% resources.each do |r| %>
+  <% if r.class.name == "Pdf" %>
+    <h5><%= r.title %></h5>
+    <p><%= link_to 'View', r.document.service_url, target: :_blank %> <%= link_to 'Download', cl_image_path(r.document.key, :flags => :attachment, fl_attachment: "This is what is should be called") %>  </p>
+    <p><%= r.document.content_type.split('/').last %></p>
+    <p><%= (r.document.byte_size*0.000001).round(2) %> MB </p>
+  <% elsif r.class.name == "Video" %>
+    <p><%= r.title %></p>
+    <p class='js-modal-btn' data-video-id= "<%= r.url_code  %>" >Stream Video</p>
+    <p>Vimeo link</p>
+  <% elsif r.class.name == "Infographic" %>
+    <p><%= r.title %></p>
+    <p><%= r.photo.content_type.split('/').last %></p>
+    <p><%= (r.photo.byte_size*0.000001).round(2) %> MB </p>
+    <p><%= cl_image_tag(r.photo.key, :width=>100, :crop=>"scale") %></p>
+  <% end %>
+<% end %>
