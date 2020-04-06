@@ -22,3 +22,9 @@
   <p><%= i.title %></p>
   <p class='js-modal-btn' data-video-id= "<%= i.url_code  %>" >Stream Video</p>
 <% end %>
+
+
+<h1>All Resources</h1>
+<% @all_resources.each do |r| %>
+  <p><%= r.title %></p>
+<% end %>
