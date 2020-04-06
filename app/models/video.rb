@@ -10,7 +10,7 @@ class Video < ApplicationRecord
   validates :title, :url, presence: true
 
   before_create do
-    self.title = self.url.capitalize
+    self.url_code = self.url.split('https://vimeo.com/').last
   end
 
   private

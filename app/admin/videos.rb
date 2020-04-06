@@ -9,7 +9,7 @@ ActiveAdmin.register Video do
   form do |f|
     f.semantic_errors # shows errors on :base
     f.inputs "Upload the Url Vimeo you want" do
-      f.input :url, label: "Paste The Vimeo Link Here"
+      f.input :url, label: "Paste The Vimeo Link Here. It has to be in the format 'https://vimeo.com/395780253' "
     end
     I18n.available_locales.each do |locale|
       f.inputs " #{locale == :en ? 'Video - English Translation ' : 'Video - Laos Translation'}" do
