@@ -5,7 +5,7 @@ ActiveAdmin.register Infographic do
   # Uncomment all parameters which should be permitted for assignment
   #
   # permit_params :title, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?
-  permit_params  :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?, :photo
+  permit_params  *Infographic.globalize_attribute_names, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?, :photo
   form do |f|
     f.semantic_errors
     f.inputs "Upload the Infographic or Poster you want. It has to be PNG or JPEG" do

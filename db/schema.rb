@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_181312) do
+ActiveRecord::Schema.define(version: 2020_04_06_165302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -240,6 +240,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_181312) do
     t.datetime "updated_at", null: false
     t.boolean "english?", default: true
     t.boolean "pinned?", default: false
+    t.string "url_code"
     t.index ["category_id"], name: "index_videos_on_category_id"
     t.index ["secret_category_id"], name: "index_videos_on_secret_category_id"
     t.index ["secret_sub_category_id"], name: "index_videos_on_secret_sub_category_id"

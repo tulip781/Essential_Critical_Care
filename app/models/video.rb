@@ -7,6 +7,11 @@ class Video < ApplicationRecord
   globalize_accessors :locales => [:en, :lo], :attributes => [:title]
 
   validate :there_can_be_only_one
+  validates :title, :url, presence: true
+
+  before_create do
+    self.url_code = self.url.split('https://vimeo.com/').last
+  end
 
   private
 

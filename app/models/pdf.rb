@@ -8,6 +8,7 @@ class Pdf < ApplicationRecord
   has_one_attached :document
 
   validate :there_can_be_only_one
+  validates :title, presence: true
 
   private
 
