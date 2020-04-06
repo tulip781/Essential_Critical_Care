@@ -6,12 +6,13 @@ class Infographic < ApplicationRecord
   translates :title
   globalize_accessors :locales => [:en, :lo], :attributes => [:title]
   has_one_attached :photo
+  validate :there_can_be_only_one
 
   private
 
   def there_can_be_only_one
     if category_count + secret_category_count + sub_category_count + secret_sub_category_count != 1
-      errors.add(:base, "You can only attach this Video to one category")
+      errors.add(:base, "You can only attach this Infographic to one category")
     end
   end
 
