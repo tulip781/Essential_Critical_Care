@@ -5,3 +5,60 @@ padding: 0;
 min-width: fit-content;
 min-height: 100vh;
 }
+
+.home-page-title {
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 32px;
+  color: $black;
+  line-height: 38px;
+  margin-top: 0px;
+}
+
+.home-page-body-container {
+  padding: 20px;
+  height: calc(100vh - 106px)
+}
+
+
+.home-page-welcome {
+  font-family: 'HelveticaLTWXX-Roman';
+  font-size: 16px;
+  color: $black;
+  line-height: 19px;
+}
+
+.home-page-center-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: $main-blue;
+  border: 1px solid #555;
+
+}
+
+.home-page-center-link {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-decoration: none;
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 14px;
+  color: $white;
+}
+
+.home-page-center-list-item {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+.home-page-center-list-item:last-child {
+  border-bottom: none;
+}
+
+.center-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}

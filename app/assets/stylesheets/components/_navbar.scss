@@ -34,6 +34,9 @@
   justify-content: space-between;
   background-color: #0B5E81;
   align-items: center;
+  height: 53px;
+  box-sizing: border-box;
+  overflow:hidden;
 }
 
 .nav-hide-on-mobile {
@@ -45,7 +48,7 @@
 .language-button {
   background-color: $green-blue;
   padding: 10px 13px 10px 13px;
-  margin: 10px;
+  margin-right: 10px;
   border: 1px solid $white;
   text-align: center;
 }

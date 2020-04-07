@@ -2,21 +2,24 @@
   <%= link_to 'Home', root_path, class: "sub-nav-home-text" %>
   <%= icon('fas', 'bars') %>
 </div>
-<h1 class="jumbatron-font"><%= t('home.title') %></h1>
-<h4 class="body-text-font"><%= t('home.welcome') %></h4>
+<div class="home-page-body-container">
+  <h1 class="home-page-title"><%= t('home.title') %></h1>
+  <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
+  <div class="center-list">
+    <ul class="home-page-center-links">
+      <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
+      <% @navlinks.each do |f|  %>
+        <li class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link" %></li>
+      <% end %>
+      <li class="home-page-center-list-item"><%= link_to t('home.contact_link'), contact_path, class: "home-page-center-link" %></li>
+    </ul>
+  </div>
 
-<ul>
-  <li><%= link_to t('home.about_link'), about_path %></li>
-  <% @navlinks.each do |f|  %>
-    <li><%= link_to f.title,  navbar_base_folder_path(f) %></li>
+  <h5><%= t('home.login_hint') %></h5>
+  <h6><%= link_to t('home.login_title'), new_user_session_path %></h6>
+  <%if user_signed_in? %>
+    <% @hidden_navlinks.each do |h| %>
+      <li><%= link_to h.title,  secret_navbar_base_folder_path(h) %></li>
+    <% end %>
   <% end %>
-  <li><%= link_to t('home.contact_link'), contact_path %></li>
-</ul>
-
-<h5><%= t('home.login_hint') %></h5>
-<h6><%= link_to t('home.login_title'), new_user_session_path %></h6>
-<%if user_signed_in? %>
-  <% @hidden_navlinks.each do |h| %>
-    <li><%= link_to h.title,  secret_navbar_base_folder_path(h) %></li>
-  <% end %>
-<% end %>
+</div>
