@@ -1,0 +1,7 @@
+$break-xs: 480px;
+$break-sm: 768px;
+$break-md: 992px;
+$break-lg: 1200px;
+
+
+@media screen and (max-width: $break-sm) {}

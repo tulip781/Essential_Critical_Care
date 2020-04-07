@@ -1,0 +1,19 @@
+.sub-nav-home-text {
+  font-family: 'ArialMTPro-Regular';
+  font-size: 14px;
+  color: $white;
+  line-height: 16px;
+  text-decoration: underline;
+
+}
+
+.sub-navbar {
+  background-color: $lighter-blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 53px;
+  box-sizing: border-box;
+}
+
