@@ -6,7 +6,7 @@ ActiveAdmin.register SecretCategory do
   # Uncomment all parameters which should be permitted for assignment
   #
   # permit_params :secret_navbar_base_folder_id, :has_secret_subcategory, :title, :description
-  permit_params *SecretCategory.globalize_attribute_names
+  permit_params *SecretCategory.globalize_attribute_names, :secret_navbar_base_folder_id, :has_secret_subcategory
 
   form do |f|
   f.semantic_errors # shows errors on :base
