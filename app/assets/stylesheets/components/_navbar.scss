@@ -1,12 +1,37 @@
-.navbar-lewagon {
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items:center;
+}
+
+.navbar-left-item {
+  float:left;
+}
+
+.navbar-right-item {
+  float:right;
+}
+
+.navbar-text {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 14px;
+  color: $white;
+}
+
+.navbar-text:hover:not(.active) {
+  background-color: $lighter-blue;
+}
+
+.main-nav {
+  display: flex;
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  background-color: #0B5E81;
+  align-items: center;
 }

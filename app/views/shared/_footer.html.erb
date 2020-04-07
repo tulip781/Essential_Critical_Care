@@ -1,21 +1,23 @@
-<%if user_signed_in? %>
-  <p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
-<% else %>
-  <p><%= link_to 'Login as a Trainer', new_user_session_path %></p>
-<% end %>
+<div class="footer">
+  <%if user_signed_in? %>
+    <p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+  <% else %>
+    <p><%= link_to 'Login as a Trainer', new_user_session_path %></p>
+  <% end %>
 
-<p>Useful Links</p>
-<ul>
-  <li>Medicine Sans Frontier</li>
-  <li>Medical Advicer</li>
-  <li>NHS</li>
-</ul>
+  <p>Useful Links</p>
+  <ul>
+    <li>Medicine Sans Frontier</li>
+    <li>Medical Advicer</li>
+    <li>NHS</li>
+  </ul>
 
-<%= icon('fab', 'instagram') %>
-<%= icon('fab', 'facebook') %>
-<%= icon('fab', 'twitter') %>
-<%= link_to "/", class: "navbar-brand" do %>
-  <%= image_tag 'ECC Logo.png', width: 50 %>
-<% end %>
+  <%= icon('fab', 'instagram') %>
+  <%= icon('fab', 'facebook') %>
+  <%= icon('fab', 'twitter') %>
+  <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag 'ECC Logo.png', width: 50 %>
+  <% end %>
 
-<p>Disclaimer: The Essential Critical Care team has worked to have the content of this site informally peer-reviewed. However, it does not constitute official advice or guidance unless otherwise indicated. Please use your own discretion and judgement when applying information from this site to your practice.</p>
+  <p>Disclaimer: The Essential Critical Care team has worked to have the content of this site informally peer-reviewed. However, it does not constitute official advice or guidance unless otherwise indicated. Please use your own discretion and judgement when applying information from this site to your practice.</p>
+</div>
