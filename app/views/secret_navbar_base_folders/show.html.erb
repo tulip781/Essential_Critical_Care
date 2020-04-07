@@ -1,0 +1,9 @@
+<h1>This is the Main Category show page</h1>
+<%= cl_image_tag(@secret_navbar_base_folder.banner.key, width: 200, quality: 10) %>
+<h1><%= @secret_navbar_base_folder.title %></h1>
+<p><%= @secret_navbar_base_folder.updated_at %></p>
+<p><%= @secret_navbar_base_folder.description %></p>
+<% @secret_navbar_base_folder.secret_categories.each do |b| %>
+  <p><%= link_to b.title, secret_category_path(b) %></p>
+  <p><%= b.description %></p>
+<% end %>

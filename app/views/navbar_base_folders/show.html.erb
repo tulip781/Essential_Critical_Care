@@ -2,6 +2,7 @@
 <%= cl_image_tag(@navbar_base_folder.banner.key, width: 200) %>
 <h1><%= @navbar_base_folder.title %></h1>
 <p><%= @navbar_base_folder.updated_at %></p>
+<p><%= @navbar_base_folder.description %></p>
 <% @navbar_base_folder.categories.each do |b| %>
   <p><%= link_to b.title, category_path(b) %></p>
   <p><%= b.description %></p>

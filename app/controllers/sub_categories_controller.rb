@@ -6,6 +6,7 @@ class SubCategoriesController < ApplicationController
   end
 
   def show
+    @all_resources = @sub_category.create_resources
   end
 
   def new

@@ -1,5 +1,5 @@
 class SecretNavbarBaseFoldersController < ApplicationController
-  skip_before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_secret_navbar_base_folder, only: [:show, :edit, :update, :destroy]
 
   def index
