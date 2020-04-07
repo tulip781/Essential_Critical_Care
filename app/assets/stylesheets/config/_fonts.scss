@@ -1,16 +1,46 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
-// Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// // Define fonts for body and headers
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "ArialMTPro-Regular";
+  src: font-url('ArialMTPro-Regular/font.eot');
+  src: font-url('ArialMTPro-Regular/font.eot?#iefix') format('embedded-opentype'),
+       font-url('ArialMTPro-Regular/font.woff') format('woff'),
+       font-url('ArialMTPro-Regular/font.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "HelveticaLTWXX-Roman";
+  src: font-url('HelveticaLTWXX-Roman/font.eot');
+  src: font-url('HelveticaLTWXX-Roman/font.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaLTWXX-Roman/font.woff') format('woff'),
+       font-url('HelveticaLTWXX-Roman/font.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "HelveticaLTWXX-Bold";
+  src: font-url('HelveticaLTWXX-Bold/font.eot');
+  src: font-url('HelveticaLTWXX-Bold/font.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaLTWXX-Bold/font.woff') format('woff'),
+       font-url('HelveticaLTWXX-Bold/font.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "NotoSansLao";
+  src: font-url('NotoSansLao/NotoSansLao-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "NotoSansLao";
+  src: font-url('NotoSansLao/NotoSansLao-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
