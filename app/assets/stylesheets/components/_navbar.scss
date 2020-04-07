@@ -35,3 +35,17 @@
   background-color: #0B5E81;
   align-items: center;
 }
+
+.nav-hide-on-mobile {
+  @media screen and (max-width: $break-sm) {
+    display:none;
+  }
+}
+
+.language-button {
+  background-color: $green-blue;
+  padding: 10px 13px 10px 13px;
+  margin: 10px;
+  border: 1px solid $white;
+  text-align: center;
+}

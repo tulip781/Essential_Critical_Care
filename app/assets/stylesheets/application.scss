@@ -2,11 +2,13 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/font_classes";
+@import "config/breakpoints";
 
 
 // External libraries
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
 
 // Your CSS partials
 @import "components/index";

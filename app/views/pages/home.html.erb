@@ -1,5 +1,7 @@
-<%= link_to 'Home', root_path %>
-<%= icon('fas', 'bars') %>
+<div class="sub-navbar">
+  <%= link_to 'Home', root_path, class: "sub-nav-home-text" %>
+  <%= icon('fas', 'bars') %>
+</div>
 <h1 class="jumbatron-font"><%= t('home.title') %></h1>
 <h4 class="body-text-font"><%= t('home.welcome') %></h4>
 
