@@ -19,6 +19,11 @@
       <li class="nav-item">
           <%= link_to t('home.contact_link'), contact_path, class: "nav-link" %>
       </li>
+      <%if user_signed_in? %>
+        <% @hidden_navlinks.each do |h| %>
+          <li class="nav-item"><%= link_to h.title,  secret_navbar_base_folder_path(h), class: "nav-link" %></li>
+        <% end %>
+      <% end %>
       <li class="nav-item">
         <%= link_to "English", url_for( :locale => 'en'  ), class: "nav-link" %>
       </li>
