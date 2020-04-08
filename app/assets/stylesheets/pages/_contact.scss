@@ -1,0 +1,24 @@
+.contact-page-title {
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 32px;
+  color: $black;
+  line-height: 38px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.contact-page-description {
+  font-family: 'HelveticaLTWXX-Roman';
+  font-size: 16px;
+  color: $black;
+  line-height: 19px;
+  margin-top: 0px;
+}
+
+.contact-page-image {
+  height: 200px;
+  margin-bottom: 20px;
+  border: 1px solid $mid-gray;
+  background-position: center;
+  background-size: cover;
+}

@@ -1,4 +1,12 @@
-<h1>Secret Sub Category Show</h1>
+<div class="sub-navbar">
+  <div class="left-links-sub-nav">
+    <%= icon('fas', 'less-than') %>
+    <span class="subnav-safety-wrap">
+      <%= link_to "#{t('home.subnav_backto')} #{@secret_sub_category.secret_category.title}", secret_category_path(@secret_sub_category.secret_category), class: "sub-nav-home-text" %>
+    </span>
+  </div>
+  <%= icon('fas', 'bars') %>
+</div>
 <%= cl_image_tag(@secret_sub_category.secret_category.secret_navbar_base_folder.banner.key, width: 200) %>
 <h5><%= @sub_category.secret_category.secret_navbar_base_folder.title %></h5>
 <h5><%= link_to @secret_sub_category.secret_category.title, secret_category_path(@secret_sub_category.secret_category) %></h1>

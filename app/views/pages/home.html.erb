@@ -1,31 +1,42 @@
-<div class="sub-navbar">
-  <%= link_to t('home.subnav_title'), root_path, class: "sub-nav-home-text" %>
-  <%= icon('fas', 'bars') %>
-</div>
-<div class="home-page-body-container">
-  <h1 class="home-page-title"><%= t('home.title') %></h1>
-  <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
-  <div class="center-list">
-    <ul class="home-page-center-links">
-      <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
-      <% @navlinks.each do |f|  %>
-        <li class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link" %></li>
+<div class="global-content-wrap">
+  <div class="sub-navbar">
+    <div class="left-links-sub-nav">
+      <%if user_signed_in? %>
+        <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "sub-nav-home-text" %>
+      <% else %>
+        <%= link_to t("home.login_footer_link"), new_user_session_path, class: "sub-nav-home-text" %>
       <% end %>
-      <li class="home-page-center-list-item"><%= link_to t('home.contact_link'), contact_path, class: "home-page-center-link" %></li>
-    </ul>
+    </div>
+    <%= icon('fas', 'bars') %>
   </div>
 
-  <%if user_signed_in? == false %>
-    <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
+
+  <div class="home-page-body-container">
+    <%if user_signed_in? %>
+      <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
+    <% end %>
+    <h1 class="home-page-title"><%= t('home.title') %></h1>
+    <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
     <div class="center-list">
-      <%= link_to t('home.login_title'), new_user_session_path, class: "bottom-home-page-center-link" %>
+      <ul class="home-page-center-links">
+        <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
+        <% @navlinks.each do |f|  %>
+          <li class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link" %></li>
+        <% end %>
+        <li class="home-page-center-list-item"><%= link_to t('home.contact_link'), contact_path, class: "home-page-center-link" %></li>
+      </ul>
     </div>
-  <% else %>
-    <h5 class="login-access-hint"><%= t('home.logged_in_hint') %></h5>
-      <div class="center-list">
-      <% @hidden_navlinks.each do |h| %>
-        <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-home-page-center-link"  %>
-      <% end %>
-      </div>
-  <% end %>
+
+    <%if user_signed_in? == false %>
+      <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
+
+    <% else %>
+      <h5 class="login-access-hint"><%= t('home.logged_in_hint') %></h5>
+        <div class="center-list">
+        <% @hidden_navlinks.each do |h| %>
+          <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-home-page-center-link"  %>
+        <% end %>
+        </div>
+    <% end %>
+  </div>
 </div>

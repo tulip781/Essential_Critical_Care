@@ -1,6 +1,17 @@
-<%= link_to 'Home', root_path %>
-<%= link_to 'Contact', contact_path %>
-<%= icon('fas', 'bars') %>
-<h1><%= t('contact.title') %></h1>
-<p><%= t('contact.description') %></p>
-</p>
+<div class="global-content-wrap">
+  <div class="sub-navbar">
+    <div class="left-links-sub-nav">
+      <%= link_to t('home.subnav_title'), root_path, class: "sub-nav-home-text" %>
+      <%= icon('fas', 'greater-than') %>
+      <span class="subnav-safety-wrap">
+        <%= link_to t('home.subnav_contact_title'), contact_path, class: "sub-nav-home-text" %>
+      </span>
+    </div>
+    <%= icon('fas', 'bars') %>
+  </div>
+  <div class="home-page-body-container">
+    <div class="contact-page-image" style="background-image: url(https://res.cloudinary.com/dh3f0i9jr/image/upload/c_scale,h_580,q_12/v1586372632/8ab2cf10-1ea6-4e07-ae50-696fd9ed7622_thddea.jpg)"></div>
+    <h1 class="contact-page-title"><%= t('contact.title') %></h1>
+    <p class="contact-page-description"><%= t('contact.description') %></p>
+  </div>
+</div>
