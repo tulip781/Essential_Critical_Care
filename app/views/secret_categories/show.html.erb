@@ -2,7 +2,7 @@
   <div class="left-links-sub-nav">
     <%= icon('fas', 'less-than') %>
     <span class="subnav-safety-wrap">
-      <%= link_to "Back to #{@secret_category.secret_navbar_base_folder.title}", secret_navbar_base_folder_path(@secret_category.secret_navbar_base_folder), class: "sub-nav-home-text" %>
+      <%= link_to "#{t('home.subnav_backto')} #{@secret_category.secret_navbar_base_folder.title}", secret_navbar_base_folder_path(@secret_category.secret_navbar_base_folder), class: "sub-nav-home-text" %>
     </span>
   </div>
   <%= icon('fas', 'bars') %>
