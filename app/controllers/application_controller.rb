@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   private
 
   def get_nav_categories
-    @navlinks = NavbarBaseFolder.includes(:categories)
-    @hidden_navlinks = SecretNavbarBaseFolder.includes(:secret_categories)
+    @navlinks = NavbarBaseFolder.includes(:categories, :translations)
+    @hidden_navlinks = SecretNavbarBaseFolder.includes(:secret_categories, :translations)
   end
 end

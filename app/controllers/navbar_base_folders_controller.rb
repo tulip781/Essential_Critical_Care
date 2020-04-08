@@ -27,6 +27,6 @@ class NavbarBaseFoldersController < ApplicationController
   private
 
   def set_navbar_base_folder
-    @navbar_base_folder = NavbarBaseFolder.find(params[:id]).includes(:categories)
+    @navbar_base_folder = NavbarBaseFolder.includes(:categories, :translations).find(params[:id])
   end
 end
