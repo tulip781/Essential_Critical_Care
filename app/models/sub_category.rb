@@ -8,7 +8,7 @@ class SubCategory < ApplicationRecord
   globalize_accessors :locales => [:en, :lo], :attributes => [:title, :description]
 
   def create_resources
-    sorted = (self.pdfs + self.videos + self.infographics).sort_by(&:created_at).reverse
+    sorted = (self.pdfs.with_attached_document + self.videos + self.infographics.with_attached_photo).sort_by(&:created_at).reverse
     sorted.sort do |a, b|
       if b.pinned? == false && a.pinned?
         -1
