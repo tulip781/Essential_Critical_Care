@@ -15,8 +15,10 @@
     </ul>
   </div>
 
-  <h5><%= t('home.login_hint') %></h5>
-  <h6><%= link_to t('home.login_title'), new_user_session_path %></h6>
+  <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
+  <div class="center-list">
+    <%= link_to t('home.login_title'), new_user_session_path, class: "home-page-center-link" %>
+  </div>
   <%if user_signed_in? %>
     <% @hidden_navlinks.each do |h| %>
       <li><%= link_to h.title,  secret_navbar_base_folder_path(h) %></li>
