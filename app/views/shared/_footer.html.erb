@@ -1,23 +1,23 @@
 <div class="footer">
   <%if user_signed_in? %>
-    <p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+    <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "login-footer-link" %>
   <% else %>
-    <p><%= link_to 'Login as a Trainer', new_user_session_path %></p>
+    <%= link_to t("home.login_footer_link"), new_user_session_path, class: "login-footer-link" %>
   <% end %>
 
-  <p>Useful Links</p>
-  <ul>
-    <li>Medicine Sans Frontier</li>
-    <li>Medical Advicer</li>
-    <li>NHS</li>
+  <p class="useful-link"><%= t("home.useful_links")  %></p>
+  <ul class="useful-link">
+    <li class= "useful-link"> <%= link_to t("home.link_one"), 'https://www.msf.org.uk/', target: :_blank, class: "useful-link" %></li>
+    <li class="useful-link"><%= link_to t("home.link_two"), 'https://www.nhs.uk/', target: :_blank, class: "useful-link" %></li>
+    <li class="useful-link"><%= link_to t("home.link_three"), 'https://www.who.int/', target: :_blank, class: "useful-link" %></li>
   </ul>
 
   <%= icon('fab', 'instagram') %>
   <%= icon('fab', 'facebook') %>
   <%= icon('fab', 'twitter') %>
-  <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag 'ECC Logo.png', width: 50 %>
+  <%= link_to "/" do %>
+    <%= image_tag 'ECC Logo.png', class: "footer-logo" %>
   <% end %>
 
-  <p>Disclaimer: The Essential Critical Care team has worked to have the content of this site informally peer-reviewed. However, it does not constitute official advice or guidance unless otherwise indicated. Please use your own discretion and judgement when applying information from this site to your practice.</p>
+  <p class="footer-disclaimer"><%= t("home.disclaimer") %></p>
 </div>
