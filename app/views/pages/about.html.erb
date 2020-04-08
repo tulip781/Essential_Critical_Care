@@ -1,14 +1,20 @@
-<div class="sub-navbar">
-  <div class="left-links-sub-nav">
-    <%= link_to t('home.subnav_title'), root_path, class: "sub-nav-home-text" %>
-    <%= icon('fas', 'greater-than') %>
-    <span class="subnav-safety-wrap">
-      <%= link_to t('home.subnav_about_title'), about_path, class: "sub-nav-home-text" %>
-    </span>
+<div class="global-content-wrap">
+  <div class="sub-navbar">
+    <div class="left-links-sub-nav">
+      <%= link_to t('home.subnav_title'), root_path, class: "sub-nav-home-text" %>
+      <%= icon('fas', 'greater-than') %>
+      <span class="subnav-safety-wrap">
+        <%= link_to t('home.subnav_about_title'), about_path, class: "sub-nav-home-text" %>
+      </span>
+    </div>
+    <%= icon('fas', 'bars') %>
   </div>
-  <%= icon('fas', 'bars') %>
+
+  <div class="home-page-body-container">
+    <div class="about-page-image" style="background-image: url(https://res.cloudinary.com/dh3f0i9jr/image/upload/c_scale,h_565,q_20/v1586373185/WhatsApp_Image_2020-03-27_at_05.50.08_d72fod.jpg)"></div>
+    <h1 class="about-page-title"><%= t('about.title') %></h1>
+    <p class="about-page-description"><%= t('about.description') %></p>
+  </div>
 </div>
 
 
-<h1><%= t('about.title') %></h1>
-<p><%= t('about.description') %></p>
