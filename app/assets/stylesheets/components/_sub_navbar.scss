@@ -2,9 +2,8 @@
   font-family: 'ArialMTPro-Regular';
   font-size: 14px;
   color: $white;
-  line-height: 16px;
   text-decoration: underline;
-
+  margin-right: 10px
 }
 
 .sub-navbar {
@@ -12,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px;
   height: 53px;
   box-sizing: border-box;
 }
@@ -21,3 +20,17 @@
   color: $white;
 }
 
+.fa-greater-than {
+  margin-right: 10px;
+  font-size: 10px
+}
+
+.fa-less-than {
+  margin-right: 10px;
+  font-size: 10px
+}
+
+
+.subnav-safety-wrap {
+  white-space: nowrap;
+}

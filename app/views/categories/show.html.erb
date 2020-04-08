@@ -1,4 +1,13 @@
-<h1>Category Show</h1>
+<div class="sub-navbar">
+  <div class="left-links-sub-nav">
+    <%= icon('fas', 'less-than') %>
+    <span class="subnav-safety-wrap">
+      <%= link_to "Back to #{@category.navbar_base_folder.title}", navbar_base_folder_path(@category.navbar_base_folder), class: "sub-nav-home-text" %>
+    </span>
+  </div>
+  <%= icon('fas', 'bars') %>
+</div>
+
 <%= cl_image_tag(@category.navbar_base_folder.banner.key, width: 200, quality: 10) %>
 <h5><%= @category.navbar_base_folder.title %></h5>
 <h1><%= @category.title %></h1>
