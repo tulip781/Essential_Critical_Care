@@ -27,6 +27,6 @@ class SecretSubCategoriesController < ApplicationController
   private
 
   def set_secret_sub_category
-    @secret_sub_category = SecretSubCategory.find(params[:id])
+    @secret_sub_category = SecretSubCategory.find(params[:id]).includes(:secret_category)
   end
 end

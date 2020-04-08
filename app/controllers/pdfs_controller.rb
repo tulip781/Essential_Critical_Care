@@ -26,6 +26,6 @@ class PdfsController < ApplicationController
   private
 
   def set_pdf
-    @pdf = Pdf.find(params[:id])
+    @pdf = Pdf.find(params[:id]).with_attached_document
   end
 end

@@ -4,8 +4,17 @@ en:
     welcome: "The essential resource to find information about your medicine in Laos. Please click on the links below to find out more information"
     about_link: "ABOUT THE PROJECT"
     contact_link: "CONTACT US"
-    login_hint: "To access training materials, please log in as a trainer"
+    login_hint: "To access training materials, please log in as a trainer."
     login_title: "LOGIN AS A TRAINER"
+    subnav_title: "Home"
+    logged_in_hint: "You are now logged in as a trainer. You can access training materials below."
+    logout_footer_link: "Log Out"
+    login_footer_link: "Login as a Trainer"
+    useful_links: "Useful Links"
+    link_one: "> Medicine Sans Frontier"
+    link_two: "> NHS"
+    link_three: "> World Health Organisation"
+    disclaimer: "Disclaimer: The Essential Critical Care team has worked to have the content of this site informally peer-reviewed. However, it does not constitute official advice or guidance unless otherwise indicated. Please use your own discretion and judgement when applying information from this site to your practice."
   about:
     title: "About Essential Critical Care"
     description: "WHO works worldwide to promote health, keep the world safe, and serve the vulnerable.

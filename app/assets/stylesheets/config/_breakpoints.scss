@@ -5,3 +5,10 @@ $break-lg: 1200px;
 
 
 @media screen and (max-width: $break-sm) {}
+
+body {
+margin: 0;
+padding: 0;
+min-width: fit-content;
+min-height: 100vh;
+}

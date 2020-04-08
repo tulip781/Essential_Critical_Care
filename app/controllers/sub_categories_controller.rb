@@ -27,6 +27,6 @@ class SubCategoriesController < ApplicationController
   private
 
   def set_sub_category
-    @sub_category = SubCategory.find(params[:id])
+    @sub_category = SubCategory.find(params[:id]).includes(:category)
   end
 end

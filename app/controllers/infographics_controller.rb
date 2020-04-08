@@ -26,6 +26,6 @@ class InfographicsController < ApplicationController
   private
 
   def set_infographic
-    @category = Category.find(params[:id])
+    @infographic = Infographic.find(params[:id]).with_attached_photo
   end
 end
