@@ -1,18 +1,33 @@
-<div class="sub-navbar">
-  <div class="left-links-sub-nav">
-    <%= icon('fas', 'less-than') %>
-    <span class="subnav-safety-wrap">
-      <%= link_to "#{t('home.subnav_backto')} #{t('home.subnav_title')}", root_path, class: "sub-nav-home-text" %>
-    </span>
+<div class="global-content-wrap">
+  <div class="sub-navbar">
+    <div class="left-links-sub-nav">
+      <%= icon('fas', 'less-than') %>
+      <span class="subnav-safety-wrap">
+        <%= link_to "#{t('home.subnav_backto')} #{t('home.subnav_title')}", root_path, class: "sub-nav-home-text" %>
+      </span>
+    </div>
+    <%= icon('fas', 'bars') %>
   </div>
-  <%= icon('fas', 'bars') %>
+  <div class="category-image-banner" loading="lazy" style="background-image: url(<%= cl_image_path(@secret_navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>)">
+  </div>
+
+  <div class="home-page-body-container">
+    <h1 class="navbase-show-title"><%= @secret_navbar_base_folder.title %></h1>
+    <p class="nav-base-updated-info"><%= @secret_navbar_base_folder.updated_at %></p>
+    <p class="navbase-show-description"><%= @secret_navbar_base_folder.description %></p>
+    <% if @secret_navbar_base_folder.secret_categories.count == 0 %>
+    <% else %>
+      <div class="cats-wrap-box">
+        <% @secret_navbar_base_folder.secret_categories.each do |c| %>
+          <%= link_to secret_category_path(c), class: "remove-a-style-show-nav" do%>
+            <div class="show-cat-box">
+              <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
+              <%= icon('fas', 'arrow-right') %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<%= cl_image_tag(@secret_navbar_base_folder.banner.key, width: 200, quality: 10) %>
-<h1><%= @secret_navbar_base_folder.title %></h1>
-<p><%= @secret_navbar_base_folder.updated_at %></p>
-<p><%= @secret_navbar_base_folder.description %></p>
-<% @secret_navbar_base_folder.secret_categories.each do |b| %>
-  <p><%= link_to b.title, secret_category_path(b) %></p>
-  <p><%= b.description %></p>
-<% end %>

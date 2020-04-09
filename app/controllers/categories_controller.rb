@@ -27,6 +27,6 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = Category.includes(:sub_categories).find(params[:id])
+    @category = Category.includes(:sub_categories, :navbar_base_folder).find(params[:id])
   end
 end

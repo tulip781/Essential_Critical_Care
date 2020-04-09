@@ -19,6 +19,4 @@ class SubCategory < ApplicationRecord
       end
     end
   end
-
-
 end
