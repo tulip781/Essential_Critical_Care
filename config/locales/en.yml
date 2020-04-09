@@ -10,7 +10,7 @@ en:
     you_are_logged: "You are logged in as a trainer"
     subnav_about_title: "About"
     subnav_contact_title: "Contact Us"
-    logged_in_hint: "You are now logged in as a trainer. You can access training materials below."
+    logged_in_hint: "You can access training materials below."
     logout_footer_link: "Log Out"
     subnav_backto: "Back to"
     login_devise_description: "Please enter the Medical Trainer username and password to access hidden training material."

@@ -7,9 +7,10 @@
   </div>
   <%= icon('fas', 'bars') %>
 </div>
+<div class="category-image-banner" style="background-image: url(<%= cl_image_path(@category.navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>)">
+</div>
 
-<%= cl_image_tag(@category.navbar_base_folder.banner.key, width: 200, quality: 10) %>
-<h5><%= @category.navbar_base_folder.title %></h5>
+<h5 class="category-parent-title"><%= @category.navbar_base_folder.title %></h5>
 <h1><%= @category.title %></h1>
 <p><%= @category.description %></p>
 <% if @category.has_subcategory %>
