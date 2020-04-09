@@ -16,7 +16,8 @@
     <p class="category-updated-info"><%= @category.updated_at %></p>
     <p class="category-show-description"><%= @category.description %></p>
     <% if @category.has_subcategory %>
-        <% if @category.sub_categories == '[]' %>
+        <% if @category.sub_categories.count == 0 %>
+        <% else %>
           <div class="cats-wrap-box">
             <% @category.sub_categories.each do |c| %>
               <%= link_to sub_category_path(c), class: "remove-a-style-show-nav" do%>
