@@ -16,11 +16,22 @@
     <p class="category-updated-info"><%= @category.updated_at %></p>
     <p class="category-show-description"><%= @category.description %></p>
     <% if @category.has_subcategory %>
-      <% @category.sub_categories.each do |c| %>
-        <p><%= link_to c.title, sub_category_path(c), class: "category-show-subcatergory-link" %></p>
-      <% end %>
+        <% if @category.sub_categories == '[]' %>
+          <div class="cats-wrap-box">
+            <% @category.sub_categories.each do |c| %>
+              <%= link_to sub_category_path(c), class: "remove-a-style-show-nav" do%>
+                <div class="show-cat-box">
+                  <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
+                  <%= icon('fas', 'arrow-right') %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
     <% else %>
-    <%= render partial: "render_selected_resources", locals: { resources: @all_resources } %>
+      <%= render partial: "render_selected_resources", locals: { resources: @all_resources } %>
     <% end %>
   </div>
 </div>
+
+
