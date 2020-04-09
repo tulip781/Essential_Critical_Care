@@ -1,22 +1,26 @@
-<div class="sub-navbar">
-  <div class="left-links-sub-nav">
-    <%= icon('fas', 'less-than') %>
-    <span class="subnav-safety-wrap">
-      <%= link_to "Back to #{@category.navbar_base_folder.title}", navbar_base_folder_path(@category.navbar_base_folder), class: "sub-nav-home-text" %>
-    </span>
+<div class="global-content-wrap">
+  <div class="sub-navbar">
+    <div class="left-links-sub-nav">
+      <%= icon('fas', 'less-than') %>
+      <span class="subnav-safety-wrap">
+        <%= link_to "Back to #{@category.navbar_base_folder.title}", navbar_base_folder_path(@category.navbar_base_folder), class: "sub-nav-home-text" %>
+      </span>
+    </div>
+    <%= icon('fas', 'bars') %>
   </div>
-  <%= icon('fas', 'bars') %>
+  <div class="category-image-banner" style="background-image: url(<%= cl_image_path(@category.navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>)">
+  </div>
+  <div class="home-page-body-container">
+    <h5 class="category-parent-title"><%= @category.navbar_base_folder.title %></h5>
+    <h1 class="category-show-title"><%= @category.title %></h1>
+    <p class="category-updated-info"><%= @category.updated_at %></p>
+    <p class="category-show-description"><%= @category.description %></p>
+    <% if @category.has_subcategory %>
+      <% @category.sub_categories.each do |c| %>
+        <p><%= link_to c.title, sub_category_path(c), class: "category-show-subcatergory-link" %></p>
+      <% end %>
+    <% else %>
+    <%= render partial: "render_selected_resources", locals: { resources: @all_resources } %>
+    <% end %>
+  </div>
 </div>
-<div class="category-image-banner" style="background-image: url(<%= cl_image_path(@category.navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>)">
-</div>
-
-<h5 class="category-parent-title"><%= @category.navbar_base_folder.title %></h5>
-<h1><%= @category.title %></h1>
-<p><%= @category.description %></p>
-<% if @category.has_subcategory %>
-  <% @category.sub_categories.each do |c| %>
-    <p><%= link_to c.title, sub_category_path(c) %></p>
-  <% end %>
-<% else %>
-<%= render partial: "render_selected_resources", locals: { resources: @all_resources } %>
-<% end %>

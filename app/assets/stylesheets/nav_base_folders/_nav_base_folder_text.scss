@@ -1,12 +1,4 @@
-.category-parent-title {
-  font-family: 'HelveticaLTWXX-Roman';
-  font-size: 24px;
-  color: $mid-gray;
-  line-height: 29px;
-  margin: 0px;
-}
-
-.category-show-title {
+.navbase-show-title {
   font-family: 'HelveticaLTWXX-Bold';
   font-size: 32px;
   color: $black;
@@ -15,14 +7,14 @@
   margin-bottom: 10px;
 }
 
-.category-show-description {
+.navbase-show-description {
   font-family: 'HelveticaLTWXX-Roman';
   font-size: 16px;
   color: $black;
   line-height: 19px;
 }
 
-.category-show-subcatergory-link {
+.navbase-show-subcatergory-link {
   font-family: 'HelveticaLTWXX-Bold';
   font-size: 16px;
   color: $black;
@@ -30,7 +22,7 @@
   text-decoration: underline;
 }
 
-.category-updated-info {
+.nav-base-updated-info {
   font-family: 'ArialMTPro-Regular';
   font-size: 12px;
   color: $black;
