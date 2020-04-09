@@ -36,3 +36,7 @@ improve monitoring, data and information."
     title: "Contact Us"
     description: "Please visit our frequently asked questions if you have a query about WHO. If your question is not answered, please use the list below to contact us.
 WHO makes information available in accordance with its policy on information disclosure. The policy aims to increase the amount of information available and will fully come into force progressively over a period of two years."
+  sub_category:
+    stream_video: "Stream Video"
+    download_resource: "Download"
+    view_resource: "View"

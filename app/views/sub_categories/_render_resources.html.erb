@@ -1,18 +1,23 @@
-<h1>Resources</h1>
-<% resources.each do |r| %>
-  <% if r.class.name == "Pdf" %>
-    <h5><%= r.title %></h5>
-    <p><%= link_to 'View', r.document.service_url, target: :_blank %> <%= link_to 'Download', cl_image_path(r.document.key, :flags => :attachment, fl_attachment: "This is what is should be called") %>  </p>
-    <p><%= r.document.content_type.split('/').last %></p>
-    <p><%= (r.document.byte_size*0.000001).round(2) %> MB </p>
-  <% elsif r.class.name == "Video" %>
-    <p><%= r.title %></p>
-    <p class='js-modal-btn' data-video-id= "<%= r.url_code  %>" >Stream Video</p>
-    <p>Vimeo link</p>
-  <% elsif r.class.name == "Infographic" %>
-    <p><%= r.title %></p>
-    <p><%= r.photo.content_type.split('/').last %></p>
-    <p><%= (r.photo.byte_size*0.000001).round(2) %> MB </p>
-    <p><%= cl_image_tag(r.photo.key, :width=>100, :crop=>"scale", quality: "10") %></p>
+<div class="mixed-resources-wrapper">
+  <% resources.each do |r| %>
+    <% if r.class.name == "Pdf" %>
+      <div class="pdf-resource-wrapper">
+        <h5 class="pdf-resource-title"><%= r.title %></h5>
+        <p class="pdf-resource-metadata"><%= r.document.content_type.split('/').last.upcase %> - <%= (r.document.byte_size*0.000001).round(2) %> MB - <%= r.document.created_at  %> </p>
+        <p><%= link_to t('sub_category.view_resource'), r.document.service_url, target: :_blank, class: "pdf-resource-view-button" %> <%= link_to t('sub_category.download_resource'), cl_image_path(r.document.key, :flags => :attachment, fl_attachment: "This is what is should be called"), class: "pdf-resource-download-button" %>  </p>
+      </div>
+    <% elsif r.class.name == "Video" %>
+      <div class="pdf-resource-wrapper">
+        <h5 class="pdf-resource-title"><%= r.title %></h5>
+        <p class="pdf-resource-metadata">VIMEO LINK - <%= r.created_at  %></p>
+        <p class='js-modal-btn pdf-resource-view-button' data-video-id= "<%= r.url_code  %>" ><%= t('sub_category.stream_video') %></p>
+      </div>
+    <% elsif r.class.name == "Infographic" %>
+      <div class="pdf-resource-wrapper">
+        <h5 class="pdf-resource-title"><%= r.title %></h5>
+        <p><%= r.photo.content_type.split('/').last %> <%= (r.photo.byte_size*0.000001).round(2) %> MB - <%= r.photo.created_at  %> </p>
+
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
