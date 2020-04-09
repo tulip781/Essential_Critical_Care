@@ -15,9 +15,15 @@
     <h1 class="navbase-show-title"><%= @navbar_base_folder.title %></h1>
     <p class="nav-base-updated-info"><%= @navbar_base_folder.updated_at %></p>
     <p class="navbase-show-description"><%= @navbar_base_folder.description %></p>
-    <% @navbar_base_folder.categories.each do |b| %>
-      <p ><%= link_to b.title, category_path(b), class: "navbase-show-subcatergory-link" %></p>
-      <p class="navbase-show-description"><%= b.description %></p>
-    <% end %>
+    <div class="cats-wrap-box">
+      <% @navbar_base_folder.categories.each do |b| %>
+          <%= link_to category_path(b), class: "remove-a-style-show-nav" do %>
+        <div class="show-cat-box">
+          <p class="navbase-show-subcatergory-link"><%= b.title %></p>
+          <%= icon('fas', 'arrow-right') %>
+        </div>
+          <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
