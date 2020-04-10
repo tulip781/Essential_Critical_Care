@@ -6,11 +6,31 @@
   line-height: 38px;
   margin-top: 0px;
   margin-bottom: 15px;
+  @media screen and (min-width: 769px) {
+    color: $white;
+    font-family: 'HelveticaLTWXX-Bold';
+    font-size: 64px;
+    line-height: 77px;
+    text-align: center;
+  }
 }
 
 .home-page-body-container {
   padding: 20px;
 
+}
+
+.home-page-body-container-home {
+  padding: 20px;
+  height: auto;
+  @media screen and (min-width: 769px) {
+    padding: 20px;
+    min-height: calc(100vh - 210px);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .home-page-welcome {
@@ -19,6 +39,10 @@
   color: $black;
   line-height: 19px;
   margin-top: 0px;
+  @media screen and (min-width: 769px) {
+    color: $white;
+    text-align: center;
+  }
 }
 
 .home-page-center-links {
@@ -27,8 +51,10 @@
   padding: 10px;
   width: 245px;
   border: 1px solid $main-blue;
-
-
+  @media screen and (min-width: 769px) {
+    border: none;
+    width: auto;
+  }
 }
 
 .home-page-center-link {
@@ -42,6 +68,12 @@
   text-align: center;
   line-height: 35px;
   min-width: 213px;
+  border: none;
+  @media screen and (min-width: 769px) {
+    background-color: $lighter-blue;
+    border: 1px solid $white;
+    margin: 5px;
+  }
 
 }
 
@@ -67,6 +99,10 @@
   color: $black;
   line-height: 19px;
   width: 245px;
+  @media screen and (min-width: 769px) {
+    color: $white;
+    text-align: center;
+  }
 }
 
 .hidden-home-page-center-link {
@@ -82,6 +118,11 @@
   line-height: 19px;
   outline: 1px solid $main-blue;
   outline-offset: 10px;
+  @media screen and (min-width: 769px) {
+    background-color: $lighter-blue;
+    outline: 1px solid $white;
+    outline-offset: 0px;
+  }
 }
 
 .bottom-home-page-center-link {
@@ -104,4 +145,17 @@
   color: $mid-gray;
   line-height: 14px;
   margin-top: 0px;
+  @media screen and (min-width: 769px) {
+    color: $white;
+  }
 }
+
+.login-hint-wrapper {
+  display: initial;
+  @media screen and (min-width: 769px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+

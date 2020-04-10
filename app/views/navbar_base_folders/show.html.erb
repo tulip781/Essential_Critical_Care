@@ -8,12 +8,22 @@
     </div>
     <%= icon('fas', 'bars') %>
   </div>
-
-  <div class="category-image-banner"  loading="lazy" style="background-image: url(<%= cl_image_path(@navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>)">
+  <div class="scope-test">
+      <style scoped>
+        .test-load-banner {
+        background-image: none;
+        }
+        @media screen and (min-width: 769px) {
+          .test-load-banner {
+          background-image: url(<%= cl_image_path(@navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>);
+          }
+        }
+      </style>
+    <div class="category-image-banner test-load-banner"></div>
   </div>
   <div class="home-page-body-container">
     <h1 class="navbase-show-title"><%= @navbar_base_folder.title %></h1>
-    <p class="nav-base-updated-info"><%= @navbar_base_folder.updated_at %></p>
+    <p class="nav-base-updated-info"><%= t('sub_category.updated') %> <%= @navbar_base_folder.updated_at.strftime("%B %d, %Y - %R")  %></p>
     <p class="navbase-show-description"><%= @navbar_base_folder.description %></p>
     <% if @navbar_base_folder.categories.count == 0 %>
     <% else %>

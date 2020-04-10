@@ -10,33 +10,55 @@
     <%= icon('fas', 'bars') %>
   </div>
 
+  <div class="scope-test">
+    <style scoped>
+      .test-load-banner {
+      background-image: none;
+      }
+      @media screen and (min-width: 769px) {
+        .test-load-banner {
+        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('landing.jpg')%>);
+        background-size: cover;
+        }
+      }
+    </style>
 
-  <div class="home-page-body-container">
-    <%if user_signed_in? %>
-      <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
-    <% end %>
-    <h1 class="home-page-title"><%= t('home.title') %></h1>
-    <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
-    <div class="center-list">
-      <ul class="home-page-center-links">
-        <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
-        <% @navlinks.each do |f|  %>
-          <li class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link" %></li>
+
+    <div class="home-page-body-container-home test-load-banner">
+      <div class="center-all-middle-home">
+        <%if user_signed_in? %>
+          <div class="login-hint-wrapper">
+            <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
+          </div>
         <% end %>
-        <li class="home-page-center-list-item"><%= link_to t('home.contact_link'), contact_path, class: "home-page-center-link" %></li>
-      </ul>
-    </div>
-
-    <%if user_signed_in? == false %>
-      <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
-
-    <% else %>
-      <h5 class="login-access-hint"><%= t('home.logged_in_hint') %></h5>
+        <h1 class="home-page-title"><%= t('home.title') %></h1>
+        <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
         <div class="center-list">
-        <% @hidden_navlinks.each do |h| %>
-          <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-home-page-center-link"  %>
-        <% end %>
+          <ul class="home-page-center-links">
+            <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
+            <% @navlinks.each do |f|  %>
+              <li class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link" %></li>
+            <% end %>
+            <li class="home-page-center-list-item"><%= link_to t('home.contact_link'), contact_path, class: "home-page-center-link" %></li>
+          </ul>
         </div>
-    <% end %>
+
+        <%if user_signed_in? == false %>
+          <div class="login-hint-wrapper">
+            <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
+          </div>
+
+        <% else %>
+          <div class="login-hint-wrapper">
+            <h5 class="login-access-hint"><%= t('home.logged_in_hint') %></h5>
+          </div>
+            <div class="center-list">
+            <% @hidden_navlinks.each do |h| %>
+              <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-home-page-center-link"  %>
+            <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
