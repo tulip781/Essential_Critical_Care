@@ -8,13 +8,23 @@
     </div>
     <%= icon('fas', 'bars') %>
   </div>
-
-  <div class="category-image-banner"  loading="lazy" style="background-image: url(<%= cl_image_path(@sub_category.category.navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>)">
+  <div class="scope-test">
+    <style scoped>
+      .test-load-banner {
+      background-image: none;
+      }
+      @media screen and (min-width: 769px) {
+        .test-load-banner {
+        background-image: url(<%= cl_image_path(@sub_category.category.navbar_base_folder.banner.key,  quality: "auto", :crop => :fill, :fetch_format=>:auto)  %>);
+        }
+      }
+    </style>
+    <div class="category-image-banner test-load-banner"></div>
   </div>
   <div class="home-page-body-container">
     <%= link_to @sub_category.category.title, category_path(@sub_category.category), class: "sub-category-parent-title" %>
     <h1 class="sub-category-show-title"><%= @sub_category.title %></h1>
-    <p class="sub-category-updated-info"><%= @sub_category.created_at %></p>
+    <p class="sub-category-updated-info"> <%= t('sub_category.updated') %> <%= @sub_category.updated_at.strftime("%B %d, %Y - %R")  %></p>
     <p class="sub-category-show-description"><%= @sub_category.description %></p>
     <%= render partial: "render_resources", locals: { resources: @all_resources } %>
   </div>

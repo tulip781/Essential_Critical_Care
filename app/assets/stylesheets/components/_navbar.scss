@@ -23,6 +23,7 @@
   font-family: 'HelveticaLTWXX-Bold';
   font-size: 14px;
   color: $white;
+  cursor: grab;
 }
 
 .navbar-text:hover:not(.active) {
@@ -40,7 +41,7 @@
 }
 
 .nav-hide-on-mobile {
-  @media screen and (max-width: $break-sm) {
+  @media screen and (max-width: $break-md) {
     display:none;
   }
 }

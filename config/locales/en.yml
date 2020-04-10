@@ -40,3 +40,7 @@ WHO makes information available in accordance with its policy on information dis
     stream_video: "Stream Video"
     download_resource: "Download"
     view_resource: "View"
+    updated: "Updated:"
+    uploaded: "Uploaded:"
+  secret_sub_category:
+    uploaded: "Uploaded:"
