@@ -10,7 +10,7 @@
       <div class="pdf-resource-wrapper">
         <h5 class="pdf-resource-title"><%= r.title %></h5>
         <p class="pdf-resource-metadata">VIMEO LINK - <%= r.created_at  %></p>
-        <p class='js-modal-btn pdf-resource-stream-button' data-video-id= "<%= r.url_code  %>" ><%= t('sub_category.stream_video') %></p>
+        <p class='js-modal-btn pdf-resource-stream-button' data-video-id= "<%= r.url_code  %>" data-ollie-name= "<%= r.title %>" ><%= t('sub_category.stream_video') %></p>
       </div>
     <% elsif r.class.name == "Infographic" %>
       <div class="pdf-resource-wrapper">

@@ -214,10 +214,12 @@ const initModal = () => {
             event.preventDefault();
           }
           var videoId = selector.dataset.videoId;
+          var ollieName = selector.dataset.ollieName;
+
           var channel = selector.dataset.channel || opt.channel;
           var id = (0, _util.getUniqId)();
           var videoUrl = selector.dataset.videoUrl || _this.getVideoUrl(opt, channel, videoId);
-          var html = _this.getHtml(opt, videoUrl, id);
+          var html = _this.getHtml(opt, videoUrl, id, ollieName);
           (0, _util.append)(body, html);
           var modal = document.getElementById(id);
           var btn = modal.querySelector('.js-modal-video-dismiss-btn');
@@ -300,10 +302,10 @@ const initModal = () => {
       }
     }, {
       key: 'getHtml',
-      value: function getHtml(opt, videoUrl, id) {
+      value: function getHtml(opt, videoUrl, id, ollieName) {
         var padding = this.getPadding(opt.ratio);
         var classNames = opt.classNames;
-        return '\n      <div class="' + classNames.modalVideo + '" tabindex="-1" role="dialog" aria-label="' + opt.aria.openMessage + '" id="' + id + '">\n        <div class="' + classNames.modalVideoBody + '">\n          <div class="' + classNames.modalVideoInner + '">\n            <div class="' + classNames.modalVideoIframeWrap + '" style="padding-bottom:' + padding + '">\n              <button class="' + classNames.modalVideoCloseBtn + ' js-modal-video-dismiss-btn" aria-label="' + opt.aria.dismissBtnMessage + '"></button>\n              <iframe width=\'460\' height=\'230\' src="' + videoUrl + '" frameborder=\'0\' allowfullscreen=' + opt.allowFullScreen + ' tabindex="-1"/>\n            </div>\n          </div>\n        </div>\n      </div>\n    ';
+        return '\n      <div class="' + classNames.modalVideo + '" tabindex="-1" role="dialog" aria-label="' + opt.aria.openMessage + '" id="' + id + '">\n        <div class="' + classNames.modalVideoBody + '">\n          <div class="' + classNames.modalVideoInner + '">\n            <div class="' + classNames.modalVideoIframeWrap + '" style="padding-bottom:' + padding + '">\n   <h1 class="ollie-name-modal-video"> ' + ollieName + ' </h1> \n          <button class="' + classNames.modalVideoCloseBtn + ' js-modal-video-dismiss-btn" aria-label="' + opt.aria.dismissBtnMessage + '"></button>\n              <iframe width=\'460\' height=\'230\' src="' + videoUrl + '" frameborder=\'0\' allowfullscreen=' + opt.allowFullScreen + ' tabindex="-1"/>\n            </div>\n          </div>\n        </div>\n      </div>\n    ';
       }
     }]);
 
