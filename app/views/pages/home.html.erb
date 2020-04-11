@@ -2,14 +2,13 @@
   <div class="sub-navbar">
     <div class="left-links-sub-nav">
       <%if user_signed_in? %>
-        <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "sub-nav-home-text" %>
+        <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "login-footer-link" %>
       <% else %>
-        <%= link_to t("home.login_footer_link"), new_user_session_path, class: "sub-nav-home-text" %>
+        <%= link_to t("home.login_footer_link"), new_user_session_path, class: "login-footer-link" %>
       <% end %>
     </div>
     <%= icon('fas', 'bars') %>
   </div>
-
   <div class="scope-test">
     <style scoped>
       .test-load-banner {
@@ -17,47 +16,60 @@
       }
       @media screen and (min-width: 769px) {
         .test-load-banner {
+        <% if user_signed_in?  %>
+        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('landing-trainer.jpg')%>);
+        <% else %>
         background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path('landing.jpg')%>);
+        <% end %>
         background-size: cover;
         }
       }
     </style>
 
+    <div class="home-category-image-banner test-load-banner">
+       <%if user_signed_in? %>
+        <h1 class="home-page-title-wide"><%= t('home.trainer_view') %></h1>
+        <div class="login-hint-wrapper-banner">
+          <h4 class="home-page-welcome-wide"><%= t('home.trainer_view_welcome') %></h4>
+        </div>
+      <% else %>
+        <h1 class="home-page-title-wide"><%= t('home.title') %></h1>
+        <div class="login-hint-wrapper-banner">
+          <h4 class="home-page-welcome-wide"><%= t('home.welcome') %></h4>
+        </div>
+      <% end %>
+    </div>
 
-    <div class="home-page-body-container-home test-load-banner">
-      <div class="center-all-middle-home">
+    <div class="home-page-body-container-home">
+      <div class="wide-screen-resizer-home">
         <%if user_signed_in? %>
-          <div class="login-hint-wrapper">
             <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
+
+        <% end %>
+
+        <%if user_signed_in? %>
+          <h1 class="home-page-title"><%= t('home.trainer_view') %></h1>
+          <div class="login-hint-wrapper">
+            <h4 class="home-page-welcome"><%= t('home.trainer_view_welcome') %></h4>
+          </div>
+        <% else %>
+          <h1 class="home-page-title"><%= t('home.title') %></h1>
+          <div class="login-hint-wrapper">
+            <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
           </div>
         <% end %>
-        <h1 class="home-page-title"><%= t('home.title') %></h1>
-        <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
-        <div class="center-list">
-          <ul class="home-page-center-links">
-            <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
-            <% @navlinks.each do |f|  %>
-              <li class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link" %></li>
-            <% end %>
-            <li class="home-page-center-list-item"><%= link_to t('home.contact_link'), contact_path, class: "home-page-center-link" %></li>
-          </ul>
-        </div>
 
+
+        <%= render partial: "mobile_easy_links"%>
         <%if user_signed_in? == false %>
           <div class="login-hint-wrapper">
             <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
           </div>
-
         <% else %>
-          <div class="login-hint-wrapper">
-            <h5 class="login-access-hint"><%= t('home.logged_in_hint') %></h5>
-          </div>
-            <div class="center-list">
-            <% @hidden_navlinks.each do |h| %>
-              <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-home-page-center-link"  %>
-            <% end %>
-            </div>
+          <%= render partial: "hidden_screen_links" %>
         <% end %>
+        <%= render partial: "wide_screen_home"%>
+        <%= render partial: "mobile_screen_home"%>
       </div>
     </div>
   </div>

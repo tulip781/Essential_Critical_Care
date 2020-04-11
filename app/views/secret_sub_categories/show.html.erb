@@ -23,10 +23,12 @@
   </div>
 
   <div class="home-page-body-container">
-    <%= link_to @secret_sub_category.secret_category.title, secret_category_path(@secret_sub_category.secret_category), class: "sub-category-parent-title"  %>
-    <h1 class="sub-category-show-title"><%= @secret_sub_category.title %></h1>
-    <p class="sub-category-updated-info"> <%= t('sub_category.updated') %> <%= @secret_sub_category.created_at.strftime("%B %d, %Y - %R")  %></p>
-    <p class="sub-category-show-description"><%= @secret_sub_category.description %></p>
-    <%= render partial: "render_resources", locals: { resources: @all_resources } %>
+    <div class="wide-screen-resizer">
+      <%= link_to @secret_sub_category.secret_category.title, secret_category_path(@secret_sub_category.secret_category), class: "sub-category-parent-title"  %>
+      <h1 class="sub-category-show-title"><%= @secret_sub_category.title %></h1>
+      <p class="sub-category-updated-info"> <%= t('sub_category.updated') %> <%= @secret_sub_category.created_at.strftime("%B %d, %Y - %R")  %></p>
+      <p class="sub-category-show-description"><%= @secret_sub_category.description %></p>
+      <%= render partial: "render_resources", locals: { resources: @all_resources } %>
+    </div>
   </div>
 </div>

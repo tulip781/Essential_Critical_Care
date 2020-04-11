@@ -1,52 +1,39 @@
 <div class="main-nav">
   <div>
     <ul class="navbar">
-    <%= link_to "/" do %>
-      <%= image_tag 'ECC Logo.png', width: 130, class: "navbar-left-item", alt: "Essentia Critical Care Logo" %>
-    <% end %>
-
+      <%= link_to root_path do %>
+        <%= image_tag 'ECC Logo.png', width: 130, class: "navbar-left-item", alt: "Essentia Critical Care Logo" %>
+      <% end %>
+      <% if @navlinks.count == 0 %>
+      <% else %>
+        <% @navlinks.each do |f|  %>
+          <li class="navbar-left-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "navbar-text nav-hide-on-mobile"%></li>
+        <% end %>
+      <% end %>
       <li class="navbar-left-item">
         <%= link_to t('home.about_link'), about_path, class: "navbar-text nav-hide-on-mobile"%>
       </li>
-
-      <% @navlinks.each do |f|  %>
-        <li class="navbar-left-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "navbar-text nav-hide-on-mobile"%></li>
-      <% end %>
       <li class="navbar-left-item">
         <%= link_to t('home.contact_link'), contact_path, class: "navbar-text nav-hide-on-mobile" %>
       </li>
     </ul>
-
   </div>
   <div>
     <ul class="navbar">
       <%if user_signed_in? %>
-        <% @hidden_navlinks.each do |h| %>
-          <li class="navbar-left-item"><%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "navbar-text nav-hide-on-mobile"%></li>
+        <% if @hidden_navlinks.count == 0 %>
+        <% else %>
+          <% @hidden_navlinks.each do |h| %>
+            <li class="navbar-left-item"><%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "navbar-text nav-hide-on-mobile"%></li>
+          <% end %>
         <% end %>
       <% end %>
-
       <li class="navbar-right-item">
         <%= link_to "English", url_for( :locale => 'en'  ), class: "navbar-text language-button" %>
       </li>
-
       <li class="navbar-right-item">
         <%= link_to "ທ່ານສຈ", url_for( :locale => 'lo' ), class: "navbar-text language-button" %>
       </li>
-
-      <%if user_signed_in? %>
-
-        <li class="navbar-right-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-text nav-hide-on-mobile " %>
-        </li>
-
-      <% else %>
-
-        <li class="navbar-right-item">
-          <%= link_to "Login", new_user_session_path, class: "navbar-text nav-hide-on-mobile"%>
-        </li>
-
-      <% end %>
     </ul>
   </div>
 </div>

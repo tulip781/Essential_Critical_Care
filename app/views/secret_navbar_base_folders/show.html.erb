@@ -24,22 +24,24 @@
   </div>
 
   <div class="home-page-body-container">
-    <h1 class="navbase-show-title"><%= @secret_navbar_base_folder.title %></h1>
-    <p class="nav-base-updated-info">Updated On: <%= @secret_navbar_base_folder.updated_at.strftime("%B %d, %Y - %R")  %></p>
-    <p class="navbase-show-description"><%= @secret_navbar_base_folder.description %></p>
-    <% if @secret_navbar_base_folder.secret_categories.count == 0 %>
-    <% else %>
-      <div class="cats-wrap-box">
-        <% @secret_navbar_base_folder.secret_categories.each do |c| %>
-          <%= link_to secret_category_path(c), class: "remove-a-style-show-nav" do%>
-            <div class="show-cat-box">
-              <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
-              <%= icon('fas', 'arrow-right') %>
-            </div>
+    <div class="wide-screen-resizer">
+      <h1 class="navbase-show-title"><%= @secret_navbar_base_folder.title %></h1>
+      <p class="nav-base-updated-info">Updated On: <%= @secret_navbar_base_folder.updated_at.strftime("%B %d, %Y - %R")  %></p>
+      <p class="navbase-show-description"><%= @secret_navbar_base_folder.description %></p>
+      <% if @secret_navbar_base_folder.secret_categories.count == 0 %>
+      <% else %>
+        <div class="cats-wrap-box">
+          <% @secret_navbar_base_folder.secret_categories.each do |c| %>
+            <%= link_to secret_category_path(c), class: "remove-a-style-show-nav" do%>
+              <div class="show-cat-box">
+                <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
+                <%= icon('fas', 'arrow-right') %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 

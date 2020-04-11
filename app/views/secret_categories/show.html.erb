@@ -24,26 +24,28 @@
   </div>
 
   <div class="home-page-body-container">
-    <h5 class="category-parent-title"><%= @secret_category.secret_navbar_base_folder.title %></h5>
-    <h1 class="category-show-title"><%= @secret_category.title %></h1>
-    <p class="category-updated-info"><%= t('sub_category.updated') %> <%= @secret_category.updated_at.strftime("%B %d, %Y - %R")  %></p>
-    <p class="category-show-description"><%= @secret_category.description %></p>
-    <% if @secret_category.has_secret_subcategory %>
-        <% if @secret_category.secret_sub_categories.count == 0 %>
-        <% else %>
-          <div class="cats-wrap-box">
-            <% @secret_category.secret_sub_categories.each do |c| %>
-              <%= link_to secret_sub_category_path(c), class: "remove-a-style-show-nav" do%>
-                <div class="show-cat-box">
-                  <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
-                  <%= icon('fas', 'arrow-right') %>
-                </div>
+    <div class="wide-screen-resizer">
+      <h5 class="category-parent-title"><%= @secret_category.secret_navbar_base_folder.title %></h5>
+      <h1 class="category-show-title"><%= @secret_category.title %></h1>
+      <p class="category-updated-info"><%= t('sub_category.updated') %> <%= @secret_category.updated_at.strftime("%B %d, %Y - %R")  %></p>
+      <p class="category-show-description"><%= @secret_category.description %></p>
+      <% if @secret_category.has_secret_subcategory %>
+          <% if @secret_category.secret_sub_categories.count == 0 %>
+          <% else %>
+            <div class="cats-wrap-box">
+              <% @secret_category.secret_sub_categories.each do |c| %>
+                <%= link_to secret_sub_category_path(c), class: "remove-a-style-show-nav" do%>
+                  <div class="show-cat-box">
+                    <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
+                    <%= icon('fas', 'arrow-right') %>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
-        <% end %>
-    <% else %>
-      <%= render partial: "render_selected_resources", locals: { resources: @all_resources } %>
-    <% end %>
+            </div>
+          <% end %>
+      <% else %>
+        <%= render partial: "render_selected_resources", locals: { resources: @all_resources } %>
+      <% end %>
+    </div>
   </div>
 </div>

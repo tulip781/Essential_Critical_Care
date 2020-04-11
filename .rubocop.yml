@@ -9,6 +9,7 @@ AllCops:
     - 'tmp/**/*'
     - 'test/**/*'
 
+
 ConditionalAssignment:
   Enabled: false
 StringLiterals:
