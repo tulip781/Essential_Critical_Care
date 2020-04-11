@@ -1,18 +1,23 @@
-
-<div class="hidden-wrapper-home">
-  <div class="center-list-hidden">
-    <% @hidden_navlinks.each do |h| %>
-      <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-title-page"  %>
-      <% h.secret_categories.each do |s| %>
-        <%= link_to secret_category_path(s),  class: "remove-link-easy"  do %>
-          <div class="show-cat-box-hidden">
-            <p class="navbase-show-subcatergory-link-hidden"><%= s.title %></p>
-            <%= icon('fas', 'arrow-right') %>
-          </div>
+<% if @hidden_navlinks.count == 0 %>
+<% else %>
+  <div class="hidden-wrapper-home">
+    <div class="center-list-hidden">
+      <% @hidden_navlinks.each do |h| %>
+        <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-title-page"  %>
+        <% if h.secret_categories.count == 0 %>
+        <% else %>
+          <% h.secret_categories.each do |s| %>
+            <%= link_to secret_category_path(s),  class: "remove-link-easy"  do %>
+              <div class="show-cat-box-hidden">
+                <p class="navbase-show-subcatergory-link-hidden"><%= s.title %></p>
+                <%= icon('fas', 'arrow-right') %>
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
 

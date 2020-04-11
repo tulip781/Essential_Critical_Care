@@ -1,18 +1,21 @@
 <div class="widescreen-item-wrapper-partial">
-  <% @navlinks.each do |f|  %>
-    <div class="item-wrapper-partial">
-      <h1 class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link-partial" %></h1>
-      <ul class="wide-screen-list">
-        <% f.categories.each do |c| %>
-          <%= link_to category_path(c), class: "remove-a-style-show-nav" do%>
-            <div class="show-cat-box">
-              <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
-              <%= icon('fas', 'arrow-right') %>
-            </div>
+  <% if @navlinks.count == 0 %>
+  <% else %>
+    <% @navlinks.each do |f|  %>
+      <div class="item-wrapper-partial">
+        <h1 class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link-partial" %></h1>
+        <ul class="wide-screen-list">
+          <% f.categories.each do |c| %>
+            <%= link_to category_path(c), class: "remove-a-style-show-nav" do%>
+              <div class="show-cat-box">
+                <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
+                <%= icon('fas', 'arrow-right') %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-    </div>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
   <div class="item-wrapper-partial">
     <h1 class="home-page-center-list-item"><%= link_to t('home.about_link'),  about_path, class: "home-page-center-link-partial" %></h1>

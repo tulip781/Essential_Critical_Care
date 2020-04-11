@@ -1,23 +1,27 @@
 <div class="center-list">
   <ul class="home-page-center-links">
     <% if user_signed_in? %>
-      <% @hidden_navlinks.each do |h| %>
-        <%= link_to  secret_navbar_base_folder_path(h), class: "remove-link-easy" do%>
+      <% if @hidden_navlinks.count == 0 %>
+      <% else %>
+        <% @hidden_navlinks.each do |h| %>
+          <%= link_to  secret_navbar_base_folder_path(h), class: "remove-link-easy" do%>
+            <div class="show-cat-box-home">
+              <p class="easy-link-title"><%=  h.title.upcase %></p>
+              <%= icon('fas', 'arrow-right') %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% if @navlinks.count == 0 %>
+    <% else %>
+      <% @navlinks.each do |f|  %>
+        <%= link_to  navbar_base_folder_path(f), class: "remove-link-easy" do%>
           <div class="show-cat-box-home">
-            <p class="easy-link-title"><%=  h.title.upcase %></p>
+            <p class="easy-link-title"><%=  f.title %></p>
             <%= icon('fas', 'arrow-right') %>
           </div>
         <% end %>
-      <% end %>
-
-
-    <% end %>
-    <% @navlinks.each do |f|  %>
-      <%= link_to  navbar_base_folder_path(f), class: "remove-link-easy" do%>
-        <div class="show-cat-box-home">
-          <p class="easy-link-title"><%=  f.title %></p>
-          <%= icon('fas', 'arrow-right') %>
-        </div>
       <% end %>
     <% end %>
     <%= link_to  about_path, class: "remove-link-easy" do%>
