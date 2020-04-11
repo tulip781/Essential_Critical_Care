@@ -27,6 +27,13 @@ height: 100%;
   }
 }
 
+.wide-screen-resizer-home{
+  width: 100%;
+  @media screen and (min-width: 769px) {
+
+  }
+}
+
 .wide-screen-resizer-devise{
   width: 100%;
   @media screen and (min-width: 769px) {

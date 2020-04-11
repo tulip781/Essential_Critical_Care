@@ -2,9 +2,9 @@
   <div class="sub-navbar">
     <div class="left-links-sub-nav">
       <%if user_signed_in? %>
-        <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "sub-nav-home-text" %>
+        <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "login-footer-link" %>
       <% else %>
-        <%= link_to t("home.login_footer_link"), new_user_session_path, class: "sub-nav-home-text" %>
+        <%= link_to t("home.login_footer_link"), new_user_session_path, class: "login-footer-link" %>
       <% end %>
     </div>
     <%= icon('fas', 'bars') %>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="home-page-body-container-home">
-      <div class="wide-screen-resizer">
+      <div class="wide-screen-resizer-home">
         <%if user_signed_in? %>
 
             <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
