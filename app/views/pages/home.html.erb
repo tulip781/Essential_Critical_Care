@@ -35,7 +35,6 @@
     </div>
 
     <div class="home-page-body-container-home">
-      <%= render partial: "wide_screen_home"%>
       <%if user_signed_in? %>
         <div class="login-hint-wrapper">
           <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
@@ -45,29 +44,16 @@
       <div class="login-hint-wrapper">
         <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
       </div>
-      <div class="center-list">
-        <ul class="home-page-center-links">
-          <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
-          <% @navlinks.each do |f|  %>
-            <li class="home-page-center-list-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "home-page-center-link" %></li>
-          <% end %>
-          <li class="home-page-center-list-item"><%= link_to t('home.contact_link'), contact_path, class: "home-page-center-link" %></li>
-        </ul>
-      </div>
+      <%= render partial: "mobile_easy_links"%>
       <%if user_signed_in? == false %>
         <div class="login-hint-wrapper">
           <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
         </div>
       <% else %>
-        <div class="login-hint-wrapper">
-          <h5 class="login-access-hint"><%= t('home.logged_in_hint') %></h5>
-        </div>
-          <div class="center-list">
-            <% @hidden_navlinks.each do |h| %>
-              <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "hidden-home-page-center-link"  %>
-            <% end %>
-          </div>
+        <%= render partial: "hidden_screen_links" %>
       <% end %>
+      <%= render partial: "wide_screen_home"%>
+      <%= render partial: "mobile_screen_home"%>
     </div>
   </div>
 </div>

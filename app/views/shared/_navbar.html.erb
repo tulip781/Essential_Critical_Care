@@ -5,13 +5,13 @@
       <%= image_tag 'ECC Logo.png', width: 130, class: "navbar-left-item", alt: "Essentia Critical Care Logo" %>
     <% end %>
 
-      <li class="navbar-left-item">
-        <%= link_to t('home.about_link'), about_path, class: "navbar-text nav-hide-on-mobile"%>
-      </li>
 
       <% @navlinks.each do |f|  %>
         <li class="navbar-left-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "navbar-text nav-hide-on-mobile"%></li>
       <% end %>
+      <li class="navbar-left-item">
+        <%= link_to t('home.about_link'), about_path, class: "navbar-text nav-hide-on-mobile"%>
+      </li>
       <li class="navbar-left-item">
         <%= link_to t('home.contact_link'), contact_path, class: "navbar-text nav-hide-on-mobile" %>
       </li>

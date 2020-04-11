@@ -2,9 +2,18 @@
   display: none;
   @media screen and (min-width: 769px) {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.mobile-item-wrapper-partial {
+  display: grid;
+  grid-template-columns: 1fr;
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
 
 .item-wrapper-partial {
   border-radius: 5px;

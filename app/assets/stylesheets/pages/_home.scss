@@ -64,9 +64,9 @@
 
 .home-page-center-links {
   list-style-type: none;
-  margin: 0;
+  margin: 10px;
   padding: 10px;
-  width: 245px;
+  width: 100%;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -111,6 +111,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
   @media screen and (min-width: 769px) {
     display: none;
   }
@@ -137,10 +138,7 @@
   color: $white;
   background-color: $main-blue;
   text-align: center;
-  width: 213px;
   line-height: 19px;
-  outline: 1px solid $main-blue;
-  outline-offset: 10px;
   border-radius: 4px;
 
   @media screen and (min-width: 769px) {
