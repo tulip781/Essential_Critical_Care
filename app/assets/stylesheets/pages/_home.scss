@@ -7,11 +7,7 @@
   margin-top: 0px;
   margin-bottom: 15px;
   @media screen and (min-width: 769px) {
-    color: $white;
-    font-family: 'HelveticaLTWXX-Bold';
-    font-size: 32px;
-    line-height: 77px;
-    text-align: center;
+    display: none;
   }
 }
 
@@ -36,8 +32,33 @@
   line-height: 19px;
   margin-top: 0px;
   @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.home-page-welcome-wide {
+  display:none;
+  @media screen and (min-width: 769px) {
     color: $white;
     text-align: center;
+    display: inline;
+    font-family: 'HelveticaLTWXX-Roman';
+    font-size: 16px;
+    margin-top: 0px;
+  }
+}
+
+.home-category-image-banner {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $break-sm) {
+    display: none;
   }
 }
 
@@ -67,10 +88,8 @@
   border: none;
   border-radius: 4px;
   @media screen and (min-width: 769px) {
-    background-color: $lighter-blue;
     border: 1px solid $white;
     margin: 5px;
-
     border-radius: 4px;
   }
 
@@ -90,6 +109,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
 }
 
 .login-access-hint {
@@ -119,7 +141,6 @@
   outline-offset: 10px;
   border-radius: 4px;
   @media screen and (min-width: 769px) {
-    background-color: $lighter-blue;
     outline: 1px solid $white;
     outline-offset: 0px;
     border-radius: 4px;
@@ -155,10 +176,29 @@
   display: initial;
   width: auto;
   @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.login-hint-wrapper-banner {
+  display: none;
+  width: auto;
+  @media screen and (min-width: 769px) {
     display: flex;
     justify-content: center;
     width: 600px;
   }
 }
 
+.home-page-title-wide {
+  display:none;
+  @media screen and (min-width: 769px) {
+    display: block;
+    color: $white;
+    font-family: 'HelveticaLTWXX-Bold';
+    font-size: 32px;
+    line-height: 77px;
+    text-align: center;
+  }
 
+}
