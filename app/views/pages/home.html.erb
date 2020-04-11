@@ -24,15 +24,31 @@
     </style>
 
 
-    <div class="home-page-body-container-home test-load-banner">
-      <div class="center-all-middle-home">
+
+        <div class="category-image-banner test-load-banner">
         <%if user_signed_in? %>
           <div class="login-hint-wrapper">
             <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
           </div>
         <% end %>
-        <h1 class="home-page-title"><%= t('home.title') %></h1>
-        <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
+         <h1 class="home-page-title"><%= t('home.title') %></h1>
+         <div class="login-hint-wrapper">
+            <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
+          </div>
+        </div>
+    <div class="home-page-body-container-home">
+
+        <%if user_signed_in? %>
+          <div class="login-hint-wrapper">
+            <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
+          </div>
+        <% end %>
+         <h1 class="home-page-title"><%= t('home.title') %></h1>
+         <div class="login-hint-wrapper">
+            <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
+          </div>
+
+
         <div class="center-list">
           <ul class="home-page-center-links">
             <li class="home-page-center-list-item"><%= link_to t('home.about_link'), about_path, class: "home-page-center-link" %></li>
@@ -58,7 +74,6 @@
             <% end %>
             </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>

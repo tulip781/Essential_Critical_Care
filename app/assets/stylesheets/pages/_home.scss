@@ -9,7 +9,7 @@
   @media screen and (min-width: 769px) {
     color: $white;
     font-family: 'HelveticaLTWXX-Bold';
-    font-size: 64px;
+    font-size: 32px;
     line-height: 77px;
     text-align: center;
   }
@@ -25,11 +25,7 @@
   height: auto;
   @media screen and (min-width: 769px) {
     padding: 20px;
-    min-height: calc(100vh - 210px);
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
@@ -69,10 +65,13 @@
   line-height: 35px;
   min-width: 213px;
   border: none;
+  border-radius: 4px;
   @media screen and (min-width: 769px) {
     background-color: $lighter-blue;
     border: 1px solid $white;
     margin: 5px;
+
+    border-radius: 4px;
   }
 
 }
@@ -118,10 +117,12 @@
   line-height: 19px;
   outline: 1px solid $main-blue;
   outline-offset: 10px;
+  border-radius: 4px;
   @media screen and (min-width: 769px) {
     background-color: $lighter-blue;
     outline: 1px solid $white;
     outline-offset: 0px;
+    border-radius: 4px;
   }
 }
 
@@ -152,9 +153,11 @@
 
 .login-hint-wrapper {
   display: initial;
+  width: auto;
   @media screen and (min-width: 769px) {
     display: flex;
     justify-content: center;
+    width: 600px;
   }
 }
 
