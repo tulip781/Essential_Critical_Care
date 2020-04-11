@@ -21,4 +21,16 @@
   border: 1px solid $mid-gray;
   background-position: center;
   background-size: cover;
+  height: 300px;
+  width: 100%;
+  margin-bottom: 10px;
+  @media screen and (min-width: 769px) {
+
+  }
+}
+
+.center-contact-image {
+  display: flex;
+  justify-content: center;
+
 }

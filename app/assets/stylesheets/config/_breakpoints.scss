@@ -18,3 +18,26 @@ height: 100%;
   margin: 0;
   min-height: calc(100vh - 410.08px )
 }
+
+
+.wide-screen-resizer {
+  width: 100%;
+  @media screen and (min-width: 769px) {
+    width: 70vw;
+  }
+}
+
+.wide-screen-resizer-devise{
+  width: 100%;
+  @media screen and (min-width: 769px) {
+    width: 40vw;
+  }
+}
+
+.wide-screen-resizer-about {
+  width: 100%;
+  @media screen and (min-width: 769px) {
+    width: 40vw;
+    min-width: 500px;
+  }
+}

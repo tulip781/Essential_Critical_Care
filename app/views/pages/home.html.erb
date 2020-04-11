@@ -28,32 +28,51 @@
     </style>
 
     <div class="home-category-image-banner test-load-banner">
-      <h1 class="home-page-title-wide"><%= t('home.title') %></h1>
-      <div class="login-hint-wrapper-banner">
-        <h4 class="home-page-welcome-wide"><%= t('home.welcome') %></h4>
-      </div>
+       <%if user_signed_in? %>
+        <h1 class="home-page-title-wide"><%= t('home.trainer_view') %></h1>
+        <div class="login-hint-wrapper-banner">
+          <h4 class="home-page-welcome-wide"><%= t('home.trainer_view_welcome') %></h4>
+        </div>
+      <% else %>
+        <h1 class="home-page-title-wide"><%= t('home.title') %></h1>
+        <div class="login-hint-wrapper-banner">
+          <h4 class="home-page-welcome-wide"><%= t('home.welcome') %></h4>
+        </div>
+      <% end %>
     </div>
 
     <div class="home-page-body-container-home">
-      <%if user_signed_in? %>
-        <div class="login-hint-wrapper">
-          <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
-        </div>
-      <% end %>
-      <h1 class="home-page-title"><%= t('home.title') %></h1>
-      <div class="login-hint-wrapper">
-        <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
+      <div class="wide-screen-resizer">
+        <%if user_signed_in? %>
+
+            <p class="logged-in-message"><%= t('home.you_are_logged') %></p>
+
+        <% end %>
+
+        <%if user_signed_in? %>
+          <h1 class="home-page-title"><%= t('home.trainer_view') %></h1>
+          <div class="login-hint-wrapper">
+            <h4 class="home-page-welcome"><%= t('home.trainer_view_welcome') %></h4>
+          </div>
+        <% else %>
+          <h1 class="home-page-title"><%= t('home.title') %></h1>
+          <div class="login-hint-wrapper">
+            <h4 class="home-page-welcome"><%= t('home.welcome') %></h4>
+          </div>
+        <% end %>
+
+
+        <%= render partial: "mobile_easy_links"%>
+        <%if user_signed_in? == false %>
+          <div class="login-hint-wrapper">
+            <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
+          </div>
+        <% else %>
+          <%= render partial: "hidden_screen_links" %>
+        <% end %>
+        <%= render partial: "wide_screen_home"%>
+        <%= render partial: "mobile_screen_home"%>
       </div>
-      <%= render partial: "mobile_easy_links"%>
-      <%if user_signed_in? == false %>
-        <div class="login-hint-wrapper">
-          <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
-        </div>
-      <% else %>
-        <%= render partial: "hidden_screen_links" %>
-      <% end %>
-      <%= render partial: "wide_screen_home"%>
-      <%= render partial: "mobile_screen_home"%>
     </div>
   </div>
 </div>

@@ -9,26 +9,28 @@
     <%= icon('fas', 'bars') %>
   </div>
   <div class="home-page-body-container">
-    <h2 class="login-title"><%= t("home.session_login") %></h2>
-    <p class="login-description"> <%= t("home.login_devise_description") %> </p>
-    <div class="log-in-form-wrap">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :username,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "username", :class => 'form-label-styling' } %>
-          <%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "current-password", :class => 'form-label-styling' } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
-        <div class="form-actions">
-          <%= f.button :submit, t(".sign_in"), class: "login-button-form" %>
-        </div>
-      <% end %>
-    </div>
+    <div class="wide-screen-resizer-devise">
+      <h2 class="login-title"><%= t("home.session_login") %></h2>
+      <p class="login-description"> <%= t("home.login_devise_description") %> </p>
+      <div class="log-in-form-wrap">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :username,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "username", :class => 'form-label-styling' } %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password", :class => 'form-label-styling' } %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, t(".sign_in"), class: "login-button-form" %>
+          </div>
+        <% end %>
+      </div>
 
-    <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
