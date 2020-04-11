@@ -1,3 +1,4 @@
+
 .show-cat-box-home {
   height: 20px;
   padding: 10px;
@@ -12,6 +13,13 @@
     color:white;
   }
 }
+
+
+.show-cat-box-home:hover {
+  background-color: $lighter-blue;
+}
+
+
 
 .easy-link-title {
   font-family: 'HelveticaLTWXX-Bold';
