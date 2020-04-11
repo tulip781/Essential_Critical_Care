@@ -67,7 +67,9 @@
   margin: 0;
   padding: 10px;
   width: 245px;
-  border: 1px solid $main-blue;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
   @media screen and (min-width: 769px) {
     border: none;
     width: auto;
@@ -140,6 +142,7 @@
   outline: 1px solid $main-blue;
   outline-offset: 10px;
   border-radius: 4px;
+
   @media screen and (min-width: 769px) {
     outline: 1px solid $white;
     outline-offset: 0px;
