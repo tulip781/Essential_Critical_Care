@@ -20,6 +20,19 @@ ActiveAdmin.register Category do
   f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
   # or
+  index do
+    selectable_column
+    column :title
+    column :description
+    column "Sub categories" do |folder|
+      folder.sub_categories.count
+    end
+    column "Parent Folder" do |folder|
+      folder.navbar_base_folder.title
+    end
+    column :created_at
+    actions
+  end
   #
   # permit_params do
   #   permitted = [:has_subcategory, :navbar_base_folder_id, :title, :description]

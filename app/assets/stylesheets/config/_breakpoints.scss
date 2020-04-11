@@ -23,13 +23,14 @@ height: 100%;
 .wide-screen-resizer {
   width: 100%;
   @media screen and (min-width: 769px) {
-    width: 70vw;
+    width: 60vw;
   }
 }
 
 .wide-screen-resizer-home{
   width: 100%;
   @media screen and (min-width: 769px) {
+    width: 90%;
   }
 }
 
