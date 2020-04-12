@@ -1,5 +1,6 @@
 ActiveAdmin.register Video do
 
+  menu parent: "Upload Files"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -32,11 +33,23 @@ ActiveAdmin.register Video do
     end
     f.actions
   end
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :url, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  index do
+    selectable_column
+    column :title
+    column "Url - Click to View" do |folder|
+      link_to folder.url, target: :_blank do
+        folder.url
+      end
+    end
+    column :english?
+    column :lao?
+    column :both_languages?
+    column :pinned?
+    column :created_at
+    column :sub_category
+    column :category
+    column :secret_sub_category
+    column :secret_category
+    actions
+  end
 end

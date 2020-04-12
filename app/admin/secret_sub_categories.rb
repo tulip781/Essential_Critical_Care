@@ -1,5 +1,6 @@
-ActiveAdmin.register SecretSubCategory do
+ActiveAdmin.register SecretSubCategory, as: "Hidden Sub Category" do
 
+  menu parent: "Hidden Resources"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -19,10 +20,32 @@ ActiveAdmin.register SecretSubCategory do
   end
   f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
-  # permit_params do
-  #   permitted = [:secret_category_id, :title, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  index do
+    selectable_column
+    column "Hidden Sub Category Title" do |folder|
+      folder.title
+    end
+    column "Parent Category" do |folder|
+      folder.secret_category.title
+    end
+    column "Sub Category Description" do |folder|
+      folder.description
+    end
+    column "Uploads Attached " do |folder|
+      folder.pdfs.count + folder.videos.count + folder.infographics.count
+    end
+    column "PDFS Attached" do |folder|
+      folder.pdfs.count
+    end
+    column "Videos Attached" do |folder|
+      folder.videos.count
+    end
+    column "Infographics Attached" do |folder|
+      folder.infographics.count
+    end
+    column :created_at
+    actions
+  end
 
 end

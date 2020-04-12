@@ -1,5 +1,7 @@
-ActiveAdmin.register SecretNavbarBaseFolder do
+ActiveAdmin.register SecretNavbarBaseFolder, as: "Hidden Topic" do
 
+  menu parent: "Hidden Resources", priority: 0
+  actions :all, except: [:new, :create, :destroy]
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -23,10 +25,16 @@ ActiveAdmin.register SecretNavbarBaseFolder do
   end
   f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
-  #
-  # permit_params do
-  #   permitted = [:title, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  index do
+    selectable_column
+    column :title
+    column :description
+    column :created_at
+    column "Number of attached categories" do |folder|
+      folder.secret_categories.count
+    end
+    actions
+  end
+
 end

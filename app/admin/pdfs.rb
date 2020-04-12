@@ -1,5 +1,6 @@
 ActiveAdmin.register Pdf do
 
+  menu parent: "Upload Files"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -34,10 +35,27 @@ ActiveAdmin.register Pdf do
     end
     f.actions
   end
-  #
-  # permit_params do
-  #   permitted = [:title, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  index do
+    selectable_column
+    column :title
+    column "PDF - Click to View" do |folder|
+      link_to folder.document.service_url, target: :_blank do
+        cl_image_tag(folder.document.key, :width=>50, :crop=>"scale", quality: "20", :format => :jpg)
+      end
+    end
+    column "Image Size - MB" do |folder|
+      (folder.document.byte_size*0.000001).round(2)
+    end
+    column :english?
+    column :lao?
+    column :both_languages?
+    column :pinned?
+    column :created_at
+    column :sub_category
+    column :category
+    column :secret_sub_category
+    column :secret_category
+    actions
+  end
 end

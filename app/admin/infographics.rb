@@ -1,4 +1,5 @@
 ActiveAdmin.register Infographic do
+  menu parent: "Upload Files"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -33,11 +34,28 @@ ActiveAdmin.register Infographic do
     end
     f.actions
   end
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  index do
+    selectable_column
+    column :title
+    column "Image" do |folder|
+      cl_image_tag(folder.photo.key, :width=>80, :crop=>"scale", quality: "5")
+    end
+    column "Image Size - MB" do |folder|
+      (folder.photo.byte_size*0.000001).round(2)
+    end
+    column :english?
+    column :lao?
+    column :both_languages?
+    column :pinned?
+    column :created_at
+    column :sub_category
+    column :category
+    column :secret_sub_category
+    column :secret_category
+    actions
+  end
+
+
+
 end
