@@ -3,7 +3,7 @@
     <div class="left-links-sub-nav">
       <%= icon('fas', 'less-than') %>
       <span class="subnav-safety-wrap">
-        <%= link_to "#{t('home.subnav_backto')} #{@secret_category.secret_navbar_base_folder.title}", secret_navbar_base_folder_path(@secret_category.secret_navbar_base_folder), class: "sub-nav-home-text" %>
+        <%= link_to "#{t('home.subnav_backto')} #{@secret_category.secret_navbar_base_folder.title.upcase}", secret_navbar_base_folder_path(@secret_category.secret_navbar_base_folder), class: "sub-nav-home-text" %>
       </span>
     </div>
     <%= icon('fas', 'bars') %>
@@ -25,7 +25,7 @@
 
   <div class="home-page-body-container">
     <div class="wide-screen-resizer">
-      <h5 class="category-parent-title"><%= @secret_category.secret_navbar_base_folder.title %></h5>
+      <h5 class="category-parent-title"><%= @secret_category.secret_navbar_base_folder.title.upcase %></h5>
       <h1 class="category-show-title"><%= @secret_category.title %></h1>
       <p class="category-updated-info"><%= t('sub_category.updated') %> <%= @secret_category.updated_at.strftime("%B %d, %Y - %R")  %></p>
       <p class="category-show-description"><%= @secret_category.description %></p>

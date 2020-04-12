@@ -25,7 +25,7 @@
 
   <div class="home-page-body-container">
     <div class="wide-screen-resizer">
-      <h1 class="navbase-show-title"><%= @secret_navbar_base_folder.title %></h1>
+      <h1 class="navbase-show-title"><%= @secret_navbar_base_folder.title.upcase %></h1>
       <p class="nav-base-updated-info">Updated On: <%= @secret_navbar_base_folder.updated_at.strftime("%B %d, %Y - %R")  %></p>
       <p class="navbase-show-description"><%= @secret_navbar_base_folder.description %></p>
       <% if @secret_navbar_base_folder.secret_categories.count == 0 %>
