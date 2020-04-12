@@ -9,6 +9,7 @@ class Pdf < ApplicationRecord
 
   validate :there_can_be_only_one
   validates :title, presence: true
+  validates :document, attached: true
 
   private
 

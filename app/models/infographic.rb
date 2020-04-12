@@ -6,7 +6,9 @@ class Infographic < ApplicationRecord
   translates :title, :fallbacks_for_empty_translations => true
   globalize_accessors :locales => [:en, :lo], :attributes => [:title]
   has_one_attached :photo
+
   validate :there_can_be_only_one
+  validates :photo, attached: true
 
   private
 
