@@ -7,7 +7,7 @@
       <% if @navlinks.count == 0 %>
       <% else %>
         <% @navlinks.each do |f|  %>
-          <li class="navbar-left-item"><%= link_to f.title,  navbar_base_folder_path(f), class: "navbar-text nav-hide-on-mobile"%></li>
+          <li class="navbar-left-item"><%= link_to f.title.upcase,  navbar_base_folder_path(f), class: "navbar-text nav-hide-on-mobile"%></li>
         <% end %>
       <% end %>
       <li class="navbar-left-item">

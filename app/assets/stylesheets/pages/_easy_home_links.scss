@@ -38,3 +38,31 @@
   color: white;
 
 }
+
+.quick-links-title {
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 16px;
+  color: $black;
+  margin-left: 0px;
+  margin-top: 0px;
+  cursor: default;
+}
+
+.quick-links-title-two {
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 16px;
+  color: $black;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: default;
+}
+
+.quick-links-title-three {
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 16px;
+  color: $black;
+  margin-left: 10px;
+  margin-top: 20px;
+  cursor: default;
+  margin-bottom: 5px;
+}
