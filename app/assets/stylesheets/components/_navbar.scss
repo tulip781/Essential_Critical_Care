@@ -49,6 +49,17 @@
   background-color: $green-blue;
   padding: 10px 13px 10px 13px;
   margin-right: 10px;
+  text-align: center;
+  height: 10px;
+  line-height: 13px;
+  border-radius: 4px;
+  white-space:nowrap;
+}
+
+.language-button-active {
+  background-color: $lighter-blue;
+  padding: 10px 13px 10px 13px;
+  margin-right: 10px;
   border: 1px solid $white;
   text-align: center;
   height: 10px;

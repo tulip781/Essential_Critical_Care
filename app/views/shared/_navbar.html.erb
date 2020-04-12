@@ -29,10 +29,10 @@
         <% end %>
       <% end %>
       <li class="navbar-right-item">
-        <%= link_to "English", url_for( :locale => 'en'  ), class: "navbar-text language-button" %>
+        <%= link_to "English", url_for( :locale => 'en'  ), class: "navbar-text #{@english_button} " %>
       </li>
       <li class="navbar-right-item">
-        <%= link_to "ທ່ານສຈ", url_for( :locale => 'lo' ), class: "navbar-text language-button" %>
+        <%= link_to "ທ່ານສຈ", url_for( :locale => 'lo' ), class: "navbar-text #{@lao_button}" %>
       </li>
     </ul>
   </div>

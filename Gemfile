@@ -14,7 +14,7 @@ gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'globalize-accessors'
 gem 'devise-i18n'
-
+gem 'active_storage_validations'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
   before_action :get_nav_categories
+  before_action :lang_color
 
   def configure_permitted_parameters
     added_attrs = [:username, :password]
@@ -18,10 +19,21 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
+  def lang_color
+    if I18n.locale == :en
+      @english_button = "language-button-active"
+      @lao_button = "language-button"
+    else
+      @english_button = "language-button"
+      @lao_button = "language-button-active"
+    end
+  end
+
   private
 
   def get_nav_categories
     @navlinks = NavbarBaseFolder.includes(:categories, :translations)
     @hidden_navlinks = SecretNavbarBaseFolder.includes(:secret_categories, :translations)
   end
+
 end
