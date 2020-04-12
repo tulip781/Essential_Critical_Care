@@ -11,7 +11,27 @@ class Pdf < ApplicationRecord
   validates :title, presence: true
   validates :document, attached: true
 
+  validate :there_can_be_only_one_language
+
   private
+
+  def there_can_be_only_one_language
+    if english_count + lao_count + both_count != 1
+      errors.add(:base, "You can only select one langauge preference for this PDF")
+    end
+  end
+
+  def english_count
+    self.english? ? 1 : 0
+  end
+
+  def lao_count
+    self.lao? ? 1 : 0
+  end
+
+  def both_count
+    self.both_languages? ? 1 : 0
+  end
 
   def there_can_be_only_one
     if category_count + secret_category_count + sub_category_count + secret_sub_category_count != 1
@@ -34,4 +54,7 @@ class Pdf < ApplicationRecord
   def secret_sub_category_count
     secret_sub_category.present? ? 1 : 0
   end
+
+
+
 end

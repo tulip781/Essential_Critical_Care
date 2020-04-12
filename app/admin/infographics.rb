@@ -5,7 +5,7 @@ ActiveAdmin.register Infographic do
   # Uncomment all parameters which should be permitted for assignment
   #
   # permit_params :title, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?
-  permit_params  *Infographic.globalize_attribute_names, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :pinned?, :photo
+  permit_params  *Infographic.globalize_attribute_names, :sub_category_id, :category_id, :secret_category_id, :secret_sub_category_id, :english?, :lao?, :both_languages?, :pinned?, :photo
   form do |f|
     f.semantic_errors
     f.inputs "Upload the Infographic or Poster you want. It has to be PNG or JPEG" do
@@ -23,8 +23,10 @@ ActiveAdmin.register Infographic do
       f.input :secret_sub_category, label: "Secret Sub Category"
     end
      # shows errors on :base
-    f.inputs "What language is your Infographic or Poster?" do
-      f.input :english?, label: "Keep this box checked if your Infographic is English"
+    f.inputs "Language Preference" do
+      f.input :english?, label: "Check this box if you want the Infographic to show to English Viewers only"
+      f.input :lao?, label: "Check this box if you want the Infographic to show to Lao Viewers only"
+      f.input :both_languages?, label: "Check this box if you want the Infographic to show to both Lao and English Viewers"
     end
     f.inputs "Would you like to pin Infographic or Poster as important in the attatched Category. This will make it appear near the top of the list. List sorted by date added otherwise." do
       f.input :pinned?, label: "Check this box if you want to pin this PDF"
