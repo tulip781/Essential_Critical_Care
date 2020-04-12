@@ -16,6 +16,11 @@
   border-radius: 4px;
 }
 
+.login-footer-link:hover:not(.active) {
+  background-color: #7fa3b3;
+}
+
+
 .footer-disclaimer {
   font-family: 'ArialMTPro-Regular';
   font-size: 12px;

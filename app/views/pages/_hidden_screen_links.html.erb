@@ -9,7 +9,7 @@
           <% h.secret_categories.each do |s| %>
             <%= link_to secret_category_path(s),  class: "remove-link-easy"  do %>
               <div class="show-cat-box-hidden">
-                <p class="navbase-show-subcatergory-link-hidden"><%= s.title %></p>
+                <p class="navbase-show-subcatergory-link-hidden"><%= s.title.upcase %></p>
                 <%= icon('fas', 'arrow-right') %>
               </div>
             <% end %>

@@ -5,6 +5,7 @@
   overflow: hidden;
   display: flex;
   align-items:center;
+  z-index: 20000;
 }
 
 .navbar-left-item {
@@ -27,6 +28,7 @@
 
 .navbar-text:hover:not(.active) {
   background-color: $lighter-blue;
+  border-radius: 5px;
 }
 
 .main-nav {
@@ -37,6 +39,8 @@
   height: 53px;
   box-sizing: border-box;
   overflow:hidden;
+  position: relative;
+  z-index: 2000;
 }
 
 .nav-hide-on-mobile {
@@ -47,6 +51,17 @@
 
 .language-button {
   background-color: $green-blue;
+  padding: 10px 13px 10px 13px;
+  margin-right: 10px;
+  text-align: center;
+  height: 10px;
+  line-height: 13px;
+  border-radius: 4px;
+  white-space:nowrap;
+}
+
+.language-button-active {
+  background-color: $lighter-blue;
   padding: 10px 13px 10px 13px;
   margin-right: 10px;
   border: 1px solid $white;

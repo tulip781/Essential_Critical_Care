@@ -1,5 +1,6 @@
 ActiveAdmin.register SubCategory do
 
+  menu parent: "Public Resources"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -20,10 +21,31 @@ ActiveAdmin.register SubCategory do
   end
   f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
-  #
-  # permit_params do
-  #   permitted = [:category_id, :title, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  index do
+    selectable_column
+    column "Sub Category Title" do |folder|
+      folder.title
+    end
+    column "Parent Category" do |folder|
+      folder.category.title
+    end
+    column "Sub Category Description" do |folder|
+      folder.description
+    end
+    column "Uploads Attached " do |folder|
+      folder.pdfs.count + folder.videos.count + folder.infographics.count
+    end
+    column "PDFS Attached" do |folder|
+      folder.pdfs.count
+    end
+    column "Videos Attached" do |folder|
+      folder.videos.count
+    end
+    column "Infographics Attached" do |folder|
+      folder.infographics.count
+    end
+    column :created_at
+    actions
+  end
 end

@@ -1,0 +1,29 @@
+<div class="side-bar-wrapper">
+  <%= icon('fas', 'fa-times') %>
+  <% if @navlinks.count == 0 %>
+  <% else %>
+    <% @navlinks.each do |f|  %>
+      <%= link_to f.title.upcase,  navbar_base_folder_path(f), class: "side-bar-topic-title"%>
+      <% if f.categories.count == 0 %>
+      <% else %>
+        <% f.categories.each do |c|  %>
+          <%= link_to c.title,  category_path(c), class: "side-bar-category"%>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% if user_signed_in? %>
+    <% if @hidden_navlinks.count == 0 %>
+    <% else %>
+      <% @hidden_navlinks.each do |h| %>
+        <%= link_to h.title.upcase,  secret_navbar_base_folder_path(h), class: "side-bar-topic-title" %>
+        <% if h.secret_categories.count == 0 %>
+        <% else %>
+          <% h.secret_categories.each do |s| %>
+            <%= link_to s.title,  secret_category_path(s), class: "side-bar-category"%>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

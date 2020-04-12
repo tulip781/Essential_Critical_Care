@@ -1,5 +1,6 @@
 <div class="center-list">
   <ul class="home-page-center-links">
+    <h3 class="quick-links-title"><%= t('home.quick_links') %></h3>
     <% if user_signed_in? %>
       <% if @hidden_navlinks.count == 0 %>
       <% else %>
@@ -18,7 +19,7 @@
       <% @navlinks.each do |f|  %>
         <%= link_to  navbar_base_folder_path(f), class: "remove-link-easy" do%>
           <div class="show-cat-box-home">
-            <p class="easy-link-title"><%=  f.title %></p>
+            <p class="easy-link-title"><%=  f.title.upcase %></p>
             <%= icon('fas', 'arrow-right') %>
           </div>
         <% end %>

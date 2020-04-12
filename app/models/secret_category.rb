@@ -11,7 +11,7 @@ class SecretCategory < ApplicationRecord
 
   def create_resources
     sorted = (self.pdfs.with_attached_document + self.videos + self.infographics.with_attached_photo).sort_by(&:created_at).reverse
-    sorted.sort do |a, b|
+    sorted_with_pins = sorted.sort do |a, b|
       if b.pinned? == false && a.pinned?
         -1
       elsif b.pinned? && a.pinned? == false
@@ -20,5 +20,13 @@ class SecretCategory < ApplicationRecord
         0
       end
     end
+    if I18n.locale == :en
+      sorted_with_pins.select { |attachment| attachment.english? || attachment.both_languages? }
+    elsif I18n.locale == :lo
+      sorted_with_pins.select { |attachment| attachment.lao? || attachment.both_languages? }
+    else
+      sorted_with_pins
+    end
   end
+
 end

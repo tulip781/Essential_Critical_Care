@@ -23,7 +23,7 @@
   </div>
   <div class="home-page-body-container">
     <div class="wide-screen-resizer">
-      <h1 class="navbase-show-title"><%= @navbar_base_folder.title %></h1>
+      <h1 class="navbase-show-title"><%= @navbar_base_folder.title.upcase %></h1>
       <p class="nav-base-updated-info"><%= t('sub_category.updated') %> <%= @navbar_base_folder.updated_at.strftime("%B %d, %Y - %R")  %></p>
       <p class="navbase-show-description"><%= @navbar_base_folder.description %></p>
       <% if @navbar_base_folder.categories.count == 0 %>

@@ -1,5 +1,6 @@
 ActiveAdmin.register Category do
 
+  menu parent: "Public Resources"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -22,13 +23,32 @@ ActiveAdmin.register Category do
   # or
   index do
     selectable_column
-    column :title
-    column :description
-    column "Sub categories" do |folder|
+    column "Category Title" do |folder|
+      folder.title
+    end
+    column "Category Description" do |folder|
+      folder.description
+    end
+    column "Parent Topic" do |folder|
+      folder.navbar_base_folder.title
+    end
+    column "Number of Sub Categories attatched" do |folder|
       folder.sub_categories.count
     end
-    column "Parent Folder" do |folder|
-      folder.navbar_base_folder.title
+    column "Sub Categories Visible" do |folder|
+      folder.has_subcategory
+    end
+    column "Uploads Attached if No Subcategory " do |folder|
+      folder.pdfs.count + folder.videos.count + folder.infographics.count
+    end
+    column "PDFS Attached if No Subcategory" do |folder|
+      folder.pdfs.count
+    end
+    column "Videos Attached if No Subcategory" do |folder|
+      folder.videos.count
+    end
+    column "Infographics Attached if No Subcategory" do |folder|
+      folder.infographics.count
     end
     column :created_at
     actions

@@ -19,6 +19,8 @@ module EssentialCriticalCare
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:en, :lo]
     config.i18n.fallbacks = [I18n.default_locale]
+    config.time_zone = "London"
+    config.active_record.default_timezone = :local
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

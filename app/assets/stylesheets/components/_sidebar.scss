@@ -1,0 +1,45 @@
+.side-bar-wrapper {
+  background-color: $lighter-blue;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px;
+  z-index: 1000;
+  padding-top: 118px;
+  transition: right ease 1s;
+  @media screen and (min-width: 769px) {
+    width: 400px;
+  }
+  right: -450px;
+}
+
+
+
+.side-bar-wrapper.reveal {
+  right: 0px;
+  @media screen and (min-width: 769px) {
+
+  }
+
+}
+
+.side-bar-topic-title {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'HelveticaLTWXX-Bold';
+  font-size: 16px;
+  color: $white;
+}
+
+.side-bar-category  {
+  font-family: 'HelveticaLTWXX-Roman';
+  font-size: 16px;
+  color: $white;
+  line-height: 25px;
+  text-align: center;
+  display: block;
+  text-decoration: underline;
+}

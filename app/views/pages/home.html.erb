@@ -7,7 +7,7 @@
         <%= link_to t("home.login_footer_link"), new_user_session_path, class: "login-footer-link" %>
       <% end %>
     </div>
-    <%= icon('fas', 'bars') %>
+    <%= icon('fas', 'bars side-bar-trigger')%>
   </div>
   <div class="scope-test">
     <style scoped>
@@ -66,8 +66,10 @@
             <h5 class="login-access-hint"><%= t('home.login_hint') %></h5>
           </div>
         <% else %>
+          <h2 class="quick-links-title-two"><%= t('home.resources_training') %></h2>
           <%= render partial: "hidden_screen_links" %>
         <% end %>
+        <h2 class="quick-links-title-three"><%= t('home.essential') %></h2>
         <%= render partial: "wide_screen_home"%>
         <%= render partial: "mobile_screen_home"%>
       </div>
