@@ -5,6 +5,7 @@
   overflow: hidden;
   display: flex;
   align-items:center;
+  z-index: 20000;
 }
 
 .navbar-left-item {
@@ -38,6 +39,8 @@
   height: 53px;
   box-sizing: border-box;
   overflow:hidden;
+  position: relative;
+  z-index: 2000;
 }
 
 .nav-hide-on-mobile {

@@ -50,6 +50,7 @@ ActiveAdmin.register Video do
     column :category
     column :secret_sub_category
     column :secret_category
+    column :url_code
     actions
   end
 end
