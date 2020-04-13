@@ -14,10 +14,13 @@
   padding: 10px 20px;
   height: 53px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
 }
 
 .fas {
   color: $white;
+  cursor: pointer;
 }
 
 .fa-greater-than {

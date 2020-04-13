@@ -6,9 +6,9 @@
         <%= link_to "#{t('home.subnav_backto')} #{@secret_category.secret_navbar_base_folder.title.upcase}", secret_navbar_base_folder_path(@secret_category.secret_navbar_base_folder), class: "sub-nav-home-text" %>
       </span>
     </div>
-    <%= icon('fas', 'bars') %>
+    <%= icon('fas', 'bars side-bar-trigger') %>
   </div>
-
+  <%= render 'shared/top_drop_nav' %>
   <div class="scope-test">
     <style scoped>
       .test-load-banner {
