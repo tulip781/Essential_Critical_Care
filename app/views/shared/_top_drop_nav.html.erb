@@ -1,7 +1,8 @@
-<div class="side-bar-wrapper">
-  <p class="closebtn">&times;</p>
-  <% if @navlinks.count == 0 %>
-  <% else %>
+<div class="topnav">
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <% if @navlinks.count == 0 %>
+    <% else %>
     <% @navlinks.each do |f|  %>
       <%= link_to f.title.upcase,  navbar_base_folder_path(f), class: "side-bar-topic-title"%>
       <% if f.categories.count == 0 %>
@@ -26,4 +27,5 @@
       <% end %>
     <% end %>
   <% end %>
+  </div>
 </div>

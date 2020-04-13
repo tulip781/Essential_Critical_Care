@@ -1,7 +1,8 @@
 import { initModal  } from '../modal/modal';
-import { initSideBar } from '../side_bar/side_bar';
 
+import { initTopDropNav } from '../side_bar/top_drop_nav';
 
 initModal();
-initSideBar();
 
+
+initTopDropNav();

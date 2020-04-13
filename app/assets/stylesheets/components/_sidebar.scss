@@ -1,23 +1,23 @@
 .side-bar-wrapper {
   background-color: $lighter-blue;
-  height: 100vh;
+  height: 100%;
   position: fixed;
-  width: 100%;
-  top: 0;
-  padding: 20px;
   z-index: 1000;
-  padding-top: 118px;
-  transition: right ease 1s;
+  right: 0;
+  width: fit-content;
+  top: 0;
+transform: translateX(600px);
+  transition: 0.5s;
+  padding: 50px 20px;
+  box-sizing: border-box;
+
   @media screen and (min-width: 769px) {
-    width: 400px;
+
   }
-  right: -450px;
 }
 
-
-
 .side-bar-wrapper.reveal {
-  right: 0px;
+  transform: translateX(0px);
   @media screen and (min-width: 769px) {
 
   }
@@ -32,6 +32,13 @@
   font-family: 'HelveticaLTWXX-Bold';
   font-size: 16px;
   color: $white;
+  padding: 8px 8px 8px 8px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.side-bar-topic-title:hover  {
+  color: #f1f1f1;
 }
 
 .side-bar-category  {
@@ -42,4 +49,28 @@
   text-align: center;
   display: block;
   text-decoration: underline;
+  padding: 8px 8px 8px 32px;
+}
+
+.side-bar-category:hover   {
+  color: #f1f1f1;
+}
+
+
+
+
+
+
+
+
+.side-bar-wrapper  .closebtn {
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
 }
