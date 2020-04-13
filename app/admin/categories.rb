@@ -26,9 +26,6 @@ ActiveAdmin.register Category do
     column "Category Title" do |folder|
       folder.title
     end
-    column "Category Description" do |folder|
-      folder.description
-    end
     column "Parent Topic" do |folder|
       folder.navbar_base_folder.title
     end
