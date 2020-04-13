@@ -12,6 +12,7 @@ en:
     trainer_view_welcome: "You are logged in as a trainer. This grants you access to the training materials for the Essential Critical Care Course. Please find this in the section below."
     subnav_about_title: "About"
     subnav_contact_title: "Contact Us"
+    about_link_new: "ABOUT THE PROJECT"
     logged_in_hint: "You can access training materials below."
     logout_footer_link: "Log Out"
     subnav_backto: "Back to"

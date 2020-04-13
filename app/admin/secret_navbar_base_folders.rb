@@ -1,7 +1,7 @@
 ActiveAdmin.register SecretNavbarBaseFolder, as: "Hidden Topic" do
 
   menu parent: "Hidden Resources", priority: 0
-  actions :all, except: [:new, :create, :destroy]
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -36,5 +36,4 @@ ActiveAdmin.register SecretNavbarBaseFolder, as: "Hidden Topic" do
     end
     actions
   end
-
 end
