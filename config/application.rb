@@ -21,7 +21,7 @@ module EssentialCriticalCare
     config.i18n.fallbacks = [I18n.default_locale]
     config.time_zone = "London"
     config.active_record.default_timezone = :local
-    config.assets.initialize_on_precompile = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
