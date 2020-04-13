@@ -1,5 +1,3 @@
-
-
 const initTopDropNav = () => {
   const button2 = document.querySelector('.side-bar-trigger')
   const myFunction = () => {
