@@ -19,10 +19,10 @@ ActiveAdmin.register Pdf do
     end
 
     f.inputs "Select one Category to attach PDF to" do
-      f.input :category, label: "Category"
       f.input :sub_category, label: "Sub Category"
-      f.input :secret_category, label: "Secret Category"
       f.input :secret_sub_category, label: "Secret Sub Category"
+      f.input :category, label: "Category"
+      f.input :secret_category, label: "Secret Category"
     end
 
     f.inputs "Language Preference" do

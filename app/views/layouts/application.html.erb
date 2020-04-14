@@ -10,13 +10,16 @@
     <meta name="description" content="<%= meta_description %>">
 <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
     <%= favicon_link_tag asset_path('FC big.png') %>
+    <%= favicon_link_tag "FC big.png", rel: 'apple-touch-icon', type: 'image/png' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= render 'shared/google_analytics' %>
   </head>
   <body>
     <%= render 'shared/navbar' %>

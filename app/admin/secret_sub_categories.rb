@@ -29,9 +29,6 @@ ActiveAdmin.register SecretSubCategory, as: "Hidden Sub Category" do
     column "Parent Category" do |folder|
       folder.secret_category.title
     end
-    column "Sub Category Description" do |folder|
-      folder.description
-    end
     column "Uploads Attached " do |folder|
       folder.pdfs.count + folder.videos.count + folder.infographics.count
     end
