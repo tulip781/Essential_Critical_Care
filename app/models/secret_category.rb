@@ -6,6 +6,9 @@ class SecretCategory < ApplicationRecord
   has_many :secret_sub_categories, dependent: :destroy
   accepts_nested_attributes_for :secret_navbar_base_folder
 
+  validates :title, presence: true
+  validates :description, presence: true
+
   translates :title, :description, :fallbacks_for_empty_translations => true
   globalize_accessors :locales => [:en, :lo], :attributes => [:title, :description]
 

@@ -25,12 +25,12 @@
                         input_html: { autocomplete: "current-password", :class => 'form-label-styling' } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
+          <%= render 'shared/flashes' %>
           <div class="form-actions">
             <%= f.button :submit, t(".sign_in"), class: "login-button-form" %>
           </div>
         <% end %>
       </div>
-
       <%= render "devise/shared/links" %>
     </div>
   </div>

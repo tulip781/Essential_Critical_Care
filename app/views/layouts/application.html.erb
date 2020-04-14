@@ -17,9 +17,11 @@
     <meta property="og:site_name" content="<%= meta_title %>" />
     <%= favicon_link_tag asset_path('FC big.png') %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= render 'shared/google_analytics' %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
+
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>

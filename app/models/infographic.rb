@@ -9,7 +9,6 @@ class Infographic < ApplicationRecord
 
   validate :there_can_be_only_one
   validates :photo, attached: true
-
   validate :there_can_be_only_one_language
 
   private

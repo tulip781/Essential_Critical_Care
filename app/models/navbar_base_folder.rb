@@ -5,4 +5,5 @@ class NavbarBaseFolder < ApplicationRecord
   globalize_accessors :locales => [:en, :lo], :attributes => [:title, :description]
   validates :title, presence: true
   validates :description, presence: true
+  validates :banner, attached: true
 end
