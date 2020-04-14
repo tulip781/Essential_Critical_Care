@@ -26,9 +26,6 @@ ActiveAdmin.register SecretCategory, as: "Hidden Category" do
     column "Hidden Category Title" do |folder|
       folder.title
     end
-    column "Hidden Category Description" do |folder|
-      folder.description
-    end
     column "Parent Topic" do |folder|
       folder.secret_navbar_base_folder.title
     end
