@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: #8BB4C6;
     color: #2E2F30;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: 'HelveticaLTWXX-Bold';
+    font-size: 18px;
+    color: #171717;
     margin: 0;
   }
 
+/*$main-blue: #0B5E81;
+$lighter-blue: #8BB4C6;
+$mid-gray: #707070;
+$bright-blue: #D4F5F5;
+$green-blue: #688795;
+$white: #FFFFFF;
+$black: #171717;
+*/
   .rails-default-error-page div.dialog {
     width: 95%;
     max-width: 33em;
@@ -23,7 +33,7 @@
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border-top: #0B5E81 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
@@ -35,6 +45,14 @@
     font-size: 100%;
     color: #730E15;
     line-height: 1.5em;
+    font-family: 'HelveticaLTWXX-Bold';
+    font-size: 18px;
+    color: #171717;
+  }
+  .no-style-me {
+
+    color: black;
+    padding: 20px 0px;
   }
 
   .rails-default-error-page div.dialog > p {
@@ -58,8 +76,10 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
+      <h1>Essential Critical Care</h1>
       <h1>The page you were looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
+       <a href="/" class="no-style-me">Click here to return to the Essential Critical Care homepage</a>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
   </div>
