@@ -26,6 +26,6 @@ class SecretNavbarBaseFoldersController < ApplicationController
   private
 
   def set_secret_navbar_base_folder
-    @secret_navbar_base_folder = SecretNavbarBaseFolder.includes(:secret_categories).find(params[:id])
+    @secret_navbar_base_folder = SecretNavbarBaseFolder.includes(:secret_categories, :translations).find(params[:id])
   end
 end
