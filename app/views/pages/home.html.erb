@@ -2,9 +2,9 @@
   <div class="sub-navbar">
     <div class="left-links-sub-nav">
       <%if user_signed_in? %>
-        <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "login-footer-link" %>
+        <%= link_to t("home.logout_footer_link") , destroy_user_session_path, method: :delete, class: "login-footer-link-top" %>
       <% else %>
-        <%= link_to t("home.login_footer_link"), new_user_session_path, class: "login-footer-link" %>
+        <%= link_to t("home.login_footer_link"), new_user_session_path, class: "login-footer-link-top" %>
       <% end %>
     </div>
     <%= image_tag('burger-white-ollie.svg', class: "ollie-svg side-bar-trigger", alt: "icon") %>
