@@ -25,7 +25,6 @@
     <%= favicon_link_tag asset_path('FC big.png') %>
     <%= favicon_link_tag "FC big.png", rel: 'apple-touch-icon', type: 'image/png' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <%= render 'shared/google_analytics' %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -33,5 +32,6 @@
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= render 'shared/google_analytics' %>
   </body>
 </html>
