@@ -49,6 +49,12 @@
   }
 }
 
+.ollie-less-svg {
+  height: 8px;
+  cursor: pointer;
+  margin-right: 9px;
+}
+
 .language-button {
   background-color: #f2f2f2;
   padding: 10px 13px 10px 13px;
@@ -72,4 +78,9 @@
   border-radius: 4px;
   white-space:nowrap;
   color: black;
+}
+
+.ollie-svg {
+  height: 15px;
+  cursor: pointer;
 }

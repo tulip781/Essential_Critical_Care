@@ -9,7 +9,7 @@
             <%= link_to category_path(c), class: "remove-a-style-show-nav" do%>
               <div class="show-cat-box">
                 <p class="navbase-show-subcatergory-link"> <%= c.title %></p>
-                <%= icon('fas', 'arrow-right') %>
+                <%= image_tag('right-ollie.svg', class: "ollie-svg") %>
               </div>
             <% end %>
           <% end %>
@@ -22,13 +22,13 @@
     <%= link_to about_path, class: "remove-a-style-show-nav"  do%>
       <div class="show-cat-box">
         <p class="navbase-show-subcatergory-link"><%=  t('home.about_link_short') %></p>
-        <%= icon('fas', 'arrow-right') %>
+        <%= image_tag('right-ollie.svg', class: "ollie-svg") %>
       </div>
     <% end %>
     <%= link_to contact_path, class: "remove-a-style-show-nav"  do%>
       <div class="show-cat-box">
         <p class="navbase-show-subcatergory-link"><%=  t('home.contact_link_short')%></p>
-        <%= icon('fas', 'arrow-right') %>
+        <%= image_tag('right-ollie.svg', class: "ollie-svg") %>
       </div>
     <% end %>
   </div>
