@@ -10,6 +10,11 @@
   border-bottom: 1px solid rgba(1,1,1,.2);
   border-radius: 5px;
   display: flex;
+  align-items: center;
+  @media screen and (max-width: 352px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .pdf-resource-wrapper {
@@ -17,6 +22,10 @@
   padding: 10px;
   border-bottom: 1px solid rgba(1,1,1,.2);
   border-radius: 5px;
+  @media screen and (max-width: 352px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .selected-resource-text-wrap {
@@ -51,6 +60,7 @@
   font-size: 16px;
   width: fit-content;
   margin-bottom: 0px;
+  display: inline-block;
 
 }
 
@@ -67,6 +77,7 @@
   width: fit-content;
   margin-bottom: 5px;
   white-space:nowrap;
+  display: inline-block;
 
 }
 
@@ -81,5 +92,15 @@
   font-family: 'HelveticaLTWXX-Roman';
   font-size: 16px;
   width: fit-content;
-    margin-bottom: 0px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+.stop-image-stretch {
+  height: 100%;
+  margin-bottom: 0px;
+  @media screen and (max-width: 352px) {
+    margin-bottom: 10px;
+
+  }
 }
