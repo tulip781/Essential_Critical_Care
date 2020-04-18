@@ -8,7 +8,7 @@
           <%= link_to  secret_navbar_base_folder_path(h), class: "remove-link-easy" do%>
             <div class="show-cat-box-home">
               <p class="easy-link-title"><%=  h.title.upcase %></p>
-              <%= icon('fas', 'arrow-right') %>
+              <%= image_tag('white-right-ollie.svg', class: "ollie-svg") %>
             </div>
           <% end %>
         <% end %>
@@ -20,8 +20,7 @@
         <%= link_to  navbar_base_folder_path(f), class: "remove-link-easy" do%>
           <div class="show-cat-box-home">
             <p class="easy-link-title"><%=  f.title.upcase %></p>
-            <%= icon('fas', 'arrow-right') %>
-            <%= image_tag('right-ollie.svg') %>
+            <%= image_tag('white-right-ollie.svg', class: "ollie-svg") %>
           </div>
         <% end %>
       <% end %>
@@ -29,15 +28,13 @@
     <%= link_to  about_path, class: "remove-link-easy" do%>
         <div class="show-cat-box-home">
           <p class="easy-link-title"><%=  t('home.about_link') %></p>
-          <%= icon('fas', 'arrow-right') %>
-          <%= image_tag('right-ollie.svg') %>
+          <%= image_tag('white-right-ollie.svg', class: "ollie-svg") %>
         </div>
     <% end %>
     <%= link_to  contact_path, class: "remove-link-easy" do%>
         <div class="show-cat-box-home">
           <p class="easy-link-title"><%=  t('home.contact_link') %></p>
-          <%= icon('fas', 'arrow-right') %>
-          <%= image_tag('right-ollie.svg') %>
+          <%= image_tag('white-right-ollie.svg', class: "ollie-svg") %>
         </div>
     <% end %>
   </ul>
