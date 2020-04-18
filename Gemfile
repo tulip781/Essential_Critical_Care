@@ -38,3 +38,6 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'globalize-accessors'
 gem 'devise-i18n'
 gem 'active_storage_validations'
+
+
+gem 'sprockets-webp'

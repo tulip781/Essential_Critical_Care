@@ -108,6 +108,9 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -254,6 +257,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sprockets-webp (0.1.2)
+      webp-ffi (~> 0.1.7)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -272,6 +277,9 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webp-ffi (0.1.8)
+      ffi (>= 1.9.0)
+      ffi-compiler (>= 0.1.2)
     webpacker (5.0.1)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
@@ -309,6 +317,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-webp
   uglifier
   web-console (>= 3.3.0)
   webpacker
