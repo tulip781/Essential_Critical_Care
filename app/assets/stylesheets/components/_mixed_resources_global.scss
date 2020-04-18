@@ -13,7 +13,6 @@
   align-items: center;
   @media screen and (max-width: 352px) {
     flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -24,7 +23,6 @@
   border-radius: 5px;
   @media screen and (max-width: 352px) {
     flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -97,7 +95,6 @@
 }
 
 .stop-image-stretch {
-  height: 100%;
   margin-bottom: 0px;
   @media screen and (max-width: 352px) {
     margin-bottom: 10px;
