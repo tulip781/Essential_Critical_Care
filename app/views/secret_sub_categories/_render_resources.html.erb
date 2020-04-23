@@ -6,7 +6,7 @@
         <div class="pdf-resource-wrapper">
           <h5 class="pdf-resource-title"><%= r.title %></h5>
           <p class="pdf-resource-metadata"><%= r.document.content_type.split('/').last.upcase %> - <%= (r.document.byte_size*0.000001).round(2) %> MB - <%= t('secret_sub_category.uploaded')%> <%= r.document.created_at.strftime("%B %d, %Y - %R")   %> </p>
-          <p><%= link_to t('sub_category.view_resource'), r.document.service_url, target: :_blank, rel: "noopener noreferrer", class: "pdf-resource-view-button" %> <%= link_to t('sub_category.download_resource'), cl_image_path(r.document.key, :flags => :attachment, fl_attachment: "This is what is should be called"), class: "pdf-resource-download-button" %>  </p>
+          <p><%= link_to t('sub_category.view_resource'), r.document.service_url, target: :_blank, rel: "noopener noreferrer", class: "pdf-resource-view-button" %> <%= link_to t('sub_category.download_resource'), cl_image_path(r.document.key, :flags => "attachment:#{r.title}"), class: "pdf-resource-download-button" %>  </p>
         </div>
       <% elsif r.class.name == "Video" %>
         <div class="pdf-resource-wrapper">
@@ -18,7 +18,7 @@
         <div class="pdf-resource-wrapper">
           <h5 class="pdf-resource-title"><%= r.title %></h5>
           <p class="pdf-resource-metadata"><%= r.photo.content_type.split('/').last.upcase %> <%= (r.photo.byte_size*0.000001).round(2) %> MB - <%= t('secret_sub_category.uploaded')%> <%= r.photo.created_at.strftime("%B %d, %Y - %R")   %> </p>
-          <p><%= link_to t('sub_category.view_resource'), r.photo.service_url, target: :_blank, rel: "noopener noreferrer", class: "pdf-resource-view-button" %> <%= link_to t('sub_category.download_resource'), cl_image_path(r.photo.key, :flags => :attachment, fl_attachment: "This is what is should be called"), class: "pdf-resource-download-button" %>  </p>
+          <p><%= link_to t('sub_category.view_resource'), r.photo.service_url, target: :_blank, rel: "noopener noreferrer", class: "pdf-resource-view-button" %> <%= link_to t('sub_category.download_resource'), cl_image_path(r.photo.key, :flags => "attachment:#{r.title}"), class: "pdf-resource-download-button" %>  </p>
         </div>
       <% end %>
     <% end %>
