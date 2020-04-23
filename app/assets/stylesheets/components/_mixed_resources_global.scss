@@ -36,6 +36,7 @@
   color: $black;
   text-decoration: underline;
   margin: 0;
+  cursor: pointer;
 }
 
 .pdf-resource-metadata {
@@ -59,6 +60,7 @@
   width: fit-content;
   margin-bottom: 0px;
   display: inline-block;
+  cursor: pointer;
 
 }
 
@@ -76,6 +78,7 @@
   margin-bottom: 5px;
   white-space:nowrap;
   display: inline-block;
+  cursor: pointer;
 
 }
 
@@ -100,4 +103,8 @@
     margin-bottom: 10px;
 
   }
+}
+
+.link-colour-correct {
+  color: $black;
 }
