@@ -8,29 +8,29 @@ ActiveAdmin.register_page "Dashboard" do
 
     columns do
       column do
-        panel "Site Architecture" do
+        panel "Site Structure Map" do
           ul do
             NavbarBaseFolder.all.map do |n|
-              h1 link_to("Topic - " + n.title , admin_topic_path(n))
+              h1 link_to(n.title , admin_topic_path(n))
               ul do
                 n.categories.all.map do |c|
-                  h3 link_to("Category - " + c.title , admin_category_path(c))
+                  h3 link_to(c.title , admin_category_path(c))
                   ul do
                     c.sub_categories.all.map do |s|
-                      h5 link_to("Sub Category - " + s.title , admin_sub_category_path(s))
+                      h5 link_to( s.title , admin_sub_category_path(s))
                     end
                   end
                 end
               end
             end
             SecretNavbarBaseFolder.all.map do |n|
-              h1 link_to("Hidden Topic - " + n.title , admin_hidden_topic_path(n))
+              h1 link_to( n.title , admin_hidden_topic_path(n))
               ul do
                 n.secret_categories.all.map do |c|
-                  h3 link_to("Hidden Category - " + c.title , admin_hidden_category_path(c))
+                  h3 link_to(c.title , admin_hidden_category_path(c))
                   ul do
                     c.secret_sub_categories.all.map do |s|
-                      h5 link_to("Hidden Sub Category - " + s.title , admin_hidden_sub_category_path(s))
+                      h5 link_to(s.title , admin_hidden_sub_category_path(s))
                     end
                   end
                 end
