@@ -33,8 +33,7 @@
           <h4 class="home-page-welcome-wide"><%= t('home.trainer_view_welcome') %></h4>
         </div>
           <%= render partial: "hidden_screen_links" %>
-          <h2 class="quick-links-title-three-new"><%= t('home.essential') %></h2>
-          <%= render partial: "wide_screen_home"%>
+
       <% else %>
         <h1 class="home-page-title-wide"><%= t('home.title') %></h1>
         <div class="login-hint-wrapper-banner">
@@ -44,6 +43,12 @@
         <%= render partial: "mobile_screen_home"%>
       <% end %>
     </div>
+    <% if user_signed_in? %>
+      <div class="wide-screen-resizer-home-new">
+        <h2 class="quick-links-title-three"><%= t('home.essential') %></h2>
+        <%= render partial: "wide_screen_home"%>
+      </div>
+    <% end %>
 
     <div class="home-page-body-container-home">
       <div class="wide-screen-resizer-home">
