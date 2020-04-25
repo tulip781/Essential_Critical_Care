@@ -34,6 +34,16 @@ height: 100%;
   }
 }
 
+.wide-screen-resizer-home-new {
+  width: 100%;
+  display: none;
+  @media screen and (min-width: 769px) {
+    width: 90%;
+    display: inline-block;
+    padding: 30px;
+  }
+}
+
 .wide-screen-resizer-devise{
   width: 100%;
   @media screen and (min-width: 769px) {
