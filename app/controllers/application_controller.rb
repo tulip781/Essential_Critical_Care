@@ -32,8 +32,8 @@ class ApplicationController < ActionController::Base
   private
 
   def get_nav_categories
-    @navlinks = NavbarBaseFolder.includes({categories: [:translations]}, :translations).order(:updated_at)
-    @hidden_navlinks = SecretNavbarBaseFolder.includes({secret_categories: [:translations]}, :translations).order(:updated_at)
+    @navlinks = NavbarBaseFolder.includes({categories: [:translations]}, :translations).sort_by(&:updated_at).reverse
+    @hidden_navlinks = SecretNavbarBaseFolder.includes({secret_categories: [:translations]}, :translations).sort_by(&:updated_at).reverse
   end
 
 end
