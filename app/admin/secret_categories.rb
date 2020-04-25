@@ -50,11 +50,9 @@ ActiveAdmin.register SecretCategory, as: "Hidden Category" do
     column :created_at
     actions
   end
-  #
-  # permit_params do
-  #   permitted = [:secret_navbar_base_folder_id, :has_secret_subcategory, :title, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  show do
+    attributes_table :title_en, :title_lo, :description_en, :description_lo, :secret_navbar_base_folder, :has_secret_subcategory, :secret_sub_categories, :pdfs, :videos, :infographics, :created_at, :updated_at
+  end
 
 end

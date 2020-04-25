@@ -45,4 +45,9 @@ ActiveAdmin.register SubCategory do
     column :created_at
     actions
   end
+
+  show do
+    attributes_table :title_en, :title_lo, :description_en, :description_lo,  :pdfs, :videos, :infographics, :category, :created_at, :updated_at
+  end
+
 end

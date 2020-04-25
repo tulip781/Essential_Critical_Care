@@ -35,4 +35,8 @@ ActiveAdmin.register NavbarBaseFolder, as: "Topic" do
     end
     actions
   end
+
+  show do
+    attributes_table :title_en, :title_lo, :description_en, :description_lo, :categories, :created_at, :updated_at
+  end
 end
