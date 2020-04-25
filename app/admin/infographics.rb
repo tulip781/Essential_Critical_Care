@@ -56,6 +56,8 @@ ActiveAdmin.register Infographic do
     actions
   end
 
-
+  show do
+    attributes_table :title_en, :title_lo, :english?, :lao?, :both_languages?, :pinned?, :sub_category, :category, :secret_sub_category, :secret_category, :created_at, :updated_at
+  end
 
 end

@@ -45,4 +45,8 @@ ActiveAdmin.register SecretSubCategory, as: "Hidden Sub Category" do
     actions
   end
 
+  show do
+    attributes_table :title_en, :title_lo, :description_en, :description_lo,  :pdfs, :videos, :infographics, :secret_category, :created_at, :updated_at
+  end
+
 end

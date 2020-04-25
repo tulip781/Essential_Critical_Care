@@ -53,4 +53,8 @@ ActiveAdmin.register Video do
     column :url_code
     actions
   end
+
+  show do
+    attributes_table :title_en, :title_lo, :english?, :lao?, :both_languages?, :pinned?, :sub_category, :category, :secret_sub_category, :secret_category, :url_code, :created_at, :updated_at
+  end
 end

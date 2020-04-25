@@ -50,10 +50,8 @@ ActiveAdmin.register Category do
     column :created_at
     actions
   end
-  #
-  # permit_params do
-  #   permitted = [:has_subcategory, :navbar_base_folder_id, :title, :description]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  show do
+    attributes_table :title_en, :title_lo, :description_en, :description_lo, :navbar_base_folder, :has_subcategory, :sub_categories, :pdfs, :videos, :infographics, :created_at, :updated_at
+  end
 end
