@@ -15,7 +15,7 @@
   padding: 20px;
   display: flex;
   justify-content: center;
-
+  min-height: calc(100vh - 405px);
 }
 
 .home-page-body-container-home {
@@ -73,7 +73,7 @@
 
 .home-category-image-banner {
   width: 100%;
-  min-height: 500px;
+  min-height: calc(100vh - 468px);
   padding: 50px 0px;
   background-position: center;
   background-size: cover;
