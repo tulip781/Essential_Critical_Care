@@ -32,11 +32,16 @@
         <div class="login-hint-wrapper-banner">
           <h4 class="home-page-welcome-wide"><%= t('home.trainer_view_welcome') %></h4>
         </div>
+          <%= render partial: "hidden_screen_links" %>
+          <h2 class="quick-links-title-three-new"><%= t('home.essential') %></h2>
+          <%= render partial: "wide_screen_home"%>
       <% else %>
         <h1 class="home-page-title-wide"><%= t('home.title') %></h1>
         <div class="login-hint-wrapper-banner">
           <h4 class="home-page-welcome-wide"><%= t('home.welcome') %></h4>
         </div>
+        <%= render partial: "wide_screen_home"%>
+        <%= render partial: "mobile_screen_home"%>
       <% end %>
     </div>
 
@@ -68,9 +73,9 @@
         <% else %>
           <h2 class="quick-links-title-two"><%= t('home.resources_training') %></h2>
           <%= render partial: "hidden_screen_links" %>
+          <%= render partial: "wide_screen_home"%>
+          <h2 class="quick-links-title-three"><%= t('home.essential') %></h2>
         <% end %>
-        <h2 class="quick-links-title-three"><%= t('home.essential') %></h2>
-        <%= render partial: "wide_screen_home"%>
         <%= render partial: "mobile_screen_home"%>
       </div>
     </div>
