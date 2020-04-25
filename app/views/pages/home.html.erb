@@ -44,9 +44,11 @@
       <% end %>
     </div>
     <% if user_signed_in? %>
-      <div class="wide-screen-resizer-home-new">
-        <h2 class="quick-links-title-three"><%= t('home.essential') %></h2>
-        <%= render partial: "wide_screen_home"%>
+      <div style="display:flex; justify-content:center">
+        <div class="wide-screen-resizer-home-new">
+          <h2 class="quick-links-title-three"><%= t('home.essential') %></h2>
+          <%= render partial: "wide_screen_home"%>
+        </div>
       </div>
     <% end %>
 
