@@ -2,11 +2,23 @@
   overflow: hidden;
   background-color: $lighter-blue;
   position: relative;
+  padding: 0px;
+  @media screen and (min-width: 769px) {
+    width: fit-content;
+    z-index: 100000;
+    position: absolute;
+    right: 0;
+
+  }
 }
 
+#myLinks {
+  margin: 10px;
+}
 /* Hide the links inside the navigation menu (except for logo/home) */
 .topnav #myLinks {
   display: none;
+
 }
 
 /* Style navigation menu links */
