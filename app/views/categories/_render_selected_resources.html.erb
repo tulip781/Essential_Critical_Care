@@ -16,7 +16,7 @@
         </div>
       <% elsif r.class.name == "Infographic" %>
         <div class="pdf-resource-wrapper-selected-resource">
-          <%= link_to r.photo.service_url, target: :_blank, rel: "noopener noreferrer" do %>
+          <%= link_to r.photo.service_url, target: :_blank, rel: "noopener noreferrer", class: "relative" do %>
             <%= cl_image_tag(r.photo.key, :width=>80, :crop=>"scale", quality: "auto", :crop=>"scale", :fetch_format=>:auto, class: "stop-image-stretch", alt: "image-resource") %>
           <% end %>
           <div class="selected-resource-text-wrap">
