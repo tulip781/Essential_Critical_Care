@@ -24,7 +24,7 @@ ActiveAdmin.register_page "Dashboard" do
               end
             end
             SecretNavbarBaseFolder.all.map do |n|
-              h1 link_to( n.title , admin_hidden_topic_path(n))
+              h1 link_to('hidden:' + n.title , admin_hidden_topic_path(n))
               ul do
                 n.secret_categories.all.map do |c|
                   h3 link_to(c.title , admin_hidden_category_path(c))
