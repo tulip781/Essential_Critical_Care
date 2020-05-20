@@ -9,3 +9,7 @@ initModal();
 initTopDropNav();
 
 
+if document.querySelector('.fader-ollie') !== null {
+  const faderting = document.querySelector('.fader-ollie');
+  setTimeout(faderting.classList.remove('fader-ollie'), 15000);
+}
