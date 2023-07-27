@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
-ruby '2.7.0'
+ruby '~>3.1.2'
 
-gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
 gem 'bootsnap', require: false
+gem 'jsbundling-rails'
 gem 'devise'
-gem 'jbuilder', '~> 2.0'
-gem 'pg', '~> 0.21'
+gem 'jbuilder'
+gem 'pg'
 gem 'puma'
-gem 'rails', "5.2.3"
+gem 'rails', '~> 7.0.0'
 gem 'redis'
 
 
@@ -18,23 +19,23 @@ gem 'uglifier'
 gem 'webpacker'
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console'
 end
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen' 
   gem 'dotenv-rails'
 end
 
 
 gem 'cloudinary'
 gem 'globalize'
-gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin', '~> 2.14.0'
+gem 'inherited_resources'
 gem 'globalize-accessors'
 gem 'devise-i18n'
 gem 'active_storage_validations'

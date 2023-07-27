@@ -11,7 +11,7 @@
       <% elsif r.class.name == "Video" %>
         <div class="pdf-resource-wrapper">
           <h5 class="pdf-resource-title js-modal-btn " data-video-id= "<%= r.url_code  %>" data-ollie-name= "<%= r.title %>"><%= r.title %></h5>
-          <p class="pdf-resource-metadata">VIMEO LINK - <%= t('sub_category.uploaded')%> <%= r.created_at.strftime("%B %d, %Y - %R")   %></p>
+          <p class="pdf-resource-metadata">YOUTUBE LINK - <%= t('sub_category.uploaded')%> <%= r.created_at.strftime("%B %d, %Y - %R")   %></p>
           <p class='js-modal-btn pdf-resource-stream-button' data-video-id= "<%= r.url_code  %>" data-ollie-name= "<%= r.title %>" ><%= t('sub_category.stream_video') %></p>
         </div>
       <% elsif r.class.name == "Infographic" %>
