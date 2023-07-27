@@ -11,7 +11,11 @@ class Video < ApplicationRecord
   validate :there_can_be_only_one_language
 
   before_create do
-    self.url_code = self.url.split('https://vimeo.com/').last
+    if self.url.include?('youtube')
+      self.url_code = self.url.split('watch?v=').last.split('&').first
+    elsif self.url.include?('vimeo')
+      self.url_code = self.url.split('https://vimeo.com/').last
+    end
   end
 
   private
