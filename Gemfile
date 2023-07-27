@@ -16,7 +16,7 @@ gem 'autoprefixer-rails'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+
 
 group :development do
   gem 'web-console'
