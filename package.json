@@ -6,11 +6,17 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+
+  },
   "engines": {
     "node": "14.15.5"
   },
   "scripts": {
     "build": "webpack --config ./config/webpack/webpack.config.js"
-  }
+  },
+  "babel": {
+    "presets": ["@babel/preset-env"]
+   }
+  
 }
