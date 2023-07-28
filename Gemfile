@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '~>3.1.2'
 
-
+gem 'bundler', '~> 2.2', '>= 2.2.16'
 gem 'bootsnap', require: false
 gem 'jsbundling-rails'
 gem 'devise'
@@ -15,7 +15,7 @@ gem 'redis'
 gem 'autoprefixer-rails'
 gem 'sassc-rails'
 gem 'simple_form'
-gem 'uglifier'
+gem 'terser'
 
 
 group :development do
