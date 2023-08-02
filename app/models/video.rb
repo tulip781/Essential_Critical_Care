@@ -9,7 +9,7 @@ class Video < ApplicationRecord
   validate :there_can_be_only_one
   validates :title, :url, presence: true
   validate :there_can_be_only_one_language
-
+  before_update :update_url_code
   before_create do
     if self.url.include?('youtube')
       self.url_code = self.url.split('watch?v=').last.split('&').first
@@ -19,6 +19,16 @@ class Video < ApplicationRecord
   end
 
   private
+
+  def update_url_code
+    if url_changed? # Check if the URL has been modified
+      if self.url.include?('youtube')
+        self.url_code = self.url.split('watch?v=').last.split('&').first
+      elsif self.url.include?('vimeo')
+        self.url_code = self.url.split('https://vimeo.com/').last
+      end
+    end
+  end
 
   def there_can_be_only_one_language
     if english_count + lao_count + both_count != 1
