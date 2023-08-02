@@ -1,4 +1,5 @@
-// Entry point for the build script in your package.json
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+
 import { initModal  } from './modal/modal';
 
 import { initTopDropNav } from './side_bar/top_drop_nav';
@@ -29,6 +30,5 @@ if (sessionStorage.getItem('faded') !== null) {
     }
   }
 }
-
 
 

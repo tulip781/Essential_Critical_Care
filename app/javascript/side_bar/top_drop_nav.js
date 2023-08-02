@@ -1,4 +1,5 @@
 const initTopDropNav = () => {
+  console.log('Hello World from top_drop_nav.js')
   const button2 = document.querySelector('.side-bar-trigger')
   const myFunction = () => {
     const x = document.getElementById("myLinks");

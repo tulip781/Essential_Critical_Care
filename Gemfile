@@ -1,21 +1,21 @@
 source 'https://rubygems.org'
-ruby '~>3.1.2'
+ruby '~>3.2.2'
 
 gem 'bundler', '~> 2.2', '>= 2.2.16'
 gem 'bootsnap', require: false
-gem 'jsbundling-rails'
+
 gem 'devise'
 gem 'jbuilder'
 gem 'pg'
 gem 'puma'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.0.6'
 gem 'redis'
-
-
+gem "sprockets-rails"
+gem "importmap-rails"
 gem 'autoprefixer-rails'
 gem 'sassc-rails'
 gem 'simple_form'
-gem 'terser'
+
 
 
 group :development do
