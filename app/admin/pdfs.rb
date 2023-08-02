@@ -40,7 +40,7 @@ ActiveAdmin.register Pdf do
     selectable_column
     column :title
     column "PDF - Click to View" do |folder|
-      link_to folder.document.service_url, target: :_blank do
+      link_to folder.document.url, target: :_blank do
         cl_image_tag(folder.document.key, :width=>50, :crop=>"scale", quality: "20", :format => :jpg)
       end
     end
